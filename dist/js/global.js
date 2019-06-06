@@ -189,7 +189,7 @@ module.exports = class Global {
   }
 
   async save_user_to_rive({ from_id }, social) {
-    if (ref && ref_source) {
+    if (from_id) {
       this.bot.execute(
         "users.get",
         {
@@ -198,10 +198,11 @@ module.exports = class Global {
         },
         body => {
           console.log(
-            JSON.stringify("Пользователь:" + body[0].first_name + body[0].last_name)
+            JSON.stringify(
+              "Пользователь:" + body[0].first_name + body[0].last_name
+            )
           );
           //записываем имя и пол реферала
-
 
           this.firstName = body[0].first_name;
           this.lastName = body[0].last_name;

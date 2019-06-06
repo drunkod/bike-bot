@@ -30,7 +30,7 @@ const marketCollection = db.collection("market");
 const questionCollection = db.collection("question");
 const routesCollection = db.collection("routes");
 
-export {
+module.exports = {
   db,
   auth,
   currentUser,

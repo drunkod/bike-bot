@@ -26,5 +26,5 @@ function loading_done(batch_num) {
 
   //загрузка бота стрима
   // vk_init(rive, "bike");
-  // vk_init(rive, "overhear");
+  vk_init(rive, "overhear");
 }
