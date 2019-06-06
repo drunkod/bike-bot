@@ -83,7 +83,11 @@ module.exports = class fireBase extends Global {
       // URL you want to redirect back to. The domain (www.example.com) for
       // this URL must be whitelisted in the Firebase Console.
       // url: 'https://bike-chel.firebaseapp.com/?email='+ usremail,
-      url: "http://" + process.env.URL_ACTIONCODESETTINGS + "/?email=" + this.email,
+      url:
+        "http://" +
+        process.env.FB_URL_ACTION_CODE_SETTINGS +
+        "/?email=" +
+        this.email,
       // This must be true for email link sign-in.
       handleCodeInApp: true
       //   iOS: {
@@ -97,8 +101,11 @@ module.exports = class fireBase extends Global {
       //   // FDL custom domain.
       //   dynamicLinkDomain: 'coolapp.page.link'
     };
-    const link = await auth.generateSignInWithEmailLink(this.email, actionCodeSettings);
-    console.log("generateSignInWithEmailLink", link)
+    const link = await auth.generateSignInWithEmailLink(
+      this.email,
+      actionCodeSettings
+    );
+    console.log("generateSignInWithEmailLink", link);
     return link;
   }
 
