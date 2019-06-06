@@ -1,0 +1,53 @@
+<%
+    let menu = locals.entry.all.menu;
+
+    let regions = locals.entry.all.data.regions;
+
+    let { topics = [] } = locals.entry.sos;
+-%>
+<%#
+if item.hide = hide topic
+if scenes.hide = hide scenes
+%>
+<% topics.forEach(item => { -%>
+<% if(!item.hide) { -%>
+> topic <%- item.name %> includes <% if(!item.includes) { -%>global<%}else{-%><%- item.includes %><%}-%>
+    <% item.scenes.forEach((scenes, i) => { -%>
+        <% if(!scenes.hide) { -%>
+
+    + <%- scenes.comand.toLowerCase() %>
+    - <%- scenes.setter %><% 
+    if (scenes.change_text !== ''){-%><%- menu.input %><%}
+    -%> <%- scenes.change_text %>\n\n<%- scenes.question %><%- scenes.hint %> <%
+     if (scenes.go_to){-%>{topic=<%- scenes.go_to %>}<%}-%><%
+      if (scenes.comand !== 'подсказка' && scenes.hint !== ''){-%>{@подсказка}<%}-%>
+
+    <%}}); -%>
+    
+< topic
+<%} -%>
+<%}); -%>
+
+// без шаблона \/
+> topic sos_about includes global
+    + подсказка
+    -  \n\nВведите подробное описание вашей проблемы...\n  Пример: ... \n  Добавить фото вы можете по этой ссылке: vk.com/albums-<bot owner_id_overhear>  
+
+    + *
+    * <get hashtag> == кража => Ввод полного описания проблемы: <get msg_about>\n \n  Проверьте пожалуйста, правильность введенных данных:\n \n `Категория: <get hashtag>\n <get msg_title>\n <get msg_about>\nФото украденного велосипеда в альбоме: vk.com/album-90700964_215518892\n\n Об авторе:\nКонтактный номер:<get mobile>\n <get firstName>.`\n \n Данные верны?\n 1⃣ - Да\n 2⃣ - Нет, изменить{topic=sos_send}
+    - Ввод полного описания проблемы: <get msg_about>\n \n  Проверьте пожалуйста, правильность введенных данных:\n \n `Категория: <get hashtag>\n <get msg_title>\n <get msg_about>\n\n Об авторе:\nКонтактный номер:<get mobile>\n <get firstName>.`\n \n Данные верны?\n 1⃣ - Да\n 2⃣ - Нет, изменить{topic=sos_send}
+
+< topic
+
+> topic sos_send includes global
+        + отправить
+        * <get hashtag> == кража => <set hours=336><set sos_text=#помощь@<bot hash_id_overhear> #<get hashtag>@<bot hash_id_overhear>\n <get msg_title>\n <get msg_about>\nФото украденного велосипеда в альбоме: vk.com/album-90700964_215518892\n\n или с мобильного: vk.com/albums-<bot owner_id_overhear>\n\nℹ Об авторе:\nКонтактный номер:<get mobile>\n> <call>send_theft</call> Спасибо за ввод данных!\n‼ НЕ ЗАБУДЬТЕ добавить фото украденного велосипеда в альбом: vk.com/album-90700964_215518892 или добавить фото с мобильного vk.com/albums-<bot owner_id_overhear>!!!\n\n {topic=menu} {@подсказка}
+        - <set hours=3><set sos_text=#помощь@<bot hash_id_overhear> #<get hashtag>@<bot hash_id_overhear>\n <get msg_title>\n <get msg_about>\n\nℹ Об авторе:\nКонтактный номер:<get mobile>\n> <call>send_notification</call> Спасибо за ввод данных!\n\n {topic=menu} {@подсказка}
+
+        + изменить
+        - ▶Выбор:   Нет, изменить...\n\n Для изменения данных - ответьте, повторно на пару вопросов.\n
+        ^ \n Напишите короткий заголовок вашей проблемы. Например: 'Украли мой велосипед FORWARD', 'Порвалась цепь', 'Пробил колесо', 'Не могу настроить переключатель', 'Слетела цепь'  {topic=sos_title}{@подсказка}
+
+        + *
+        - <get firstName>, Пожалуйста проверьте правильность введенных данных.\n-----------------\nДля выбора используйте команды-цифры:\n '1, 2, 3...'\nДля получения справки, введите команду: 'помощь'
+< topic

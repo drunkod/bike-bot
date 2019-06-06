@@ -1,0 +1,28 @@
+<%
+    let menu = locals.entry.all.menu;
+
+    let regions = locals.entry.all.data.regions;
+
+    let { topics = [] } = locals.entry.event;
+-%>
+<%#
+if topic name = top, create whithout topic name
+%>
+<% topics.forEach(item => { -%>
+<% if(!item.hide) { -%>
+> topic <%- item.name %> includes global
+    <% item.scenes.forEach((scenes, i) => { -%>
+        <% if(!scenes.hide) { -%>
+
+    + <%- scenes.comand.toLowerCase() %>
+    - <%- scenes.setter %><% 
+    if (scenes.change_text !== ''){-%><%- menu.input %><%}
+    -%> <%- scenes.change_text %>\n\n<%- scenes.question %><%- scenes.hint %> <%
+     if (scenes.go_to){-%>{topic=<%- scenes.go_to %>}<%}-%><%
+      if (scenes.comand !== 'подсказка' && scenes.hint !== ''){-%>{@подсказка}<%}-%>
+
+    <%}}); -%>
+    
+< topic
+<%} -%>
+<%}); -%>

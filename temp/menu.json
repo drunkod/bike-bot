@@ -1,0 +1,119 @@
+{
+  "topics": [
+    {
+      "name": "menu",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Вы катаетесь на велосипеде ▪СЕЙЧАС▪ (в данный момент)?\\n Или хотите запланировать поездку и ▪СОЗДАТЬ ВСТРЕЧУ▪?\\n Быть может, поделиться фото-видео с прошедшей поездки (создать фото ▪ОТЧЕТ▪)? Поделиться историей впечатлением после поездки-покатушки? Добавить объявление Продам-Куплю-Отдам?Обсудить достижения, проблемы или попросить совета?\\n Принять участие в ▪ВЕЛОКВЕСТ▪е?\\n 1⃣ - СЕЙЧАС\\n 2⃣ - СОЗДАТЬ ВСТРЕЧУ\\n 3⃣ - ОТЧЕТ\\n 4⃣ - ВОПРОС\\n 5⃣ - КУПЛЮ|ПРОДАМ|ОТДАМ\\n 6⃣ - ПОМОГИТЕ|SOS\\n 7⃣ - ВЕЛОКВЕСТ\\n 8⃣ - ВЕЛОТУР\\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "сейчас",
+          "setter": "<set menu=now>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "change_region",
+          "keyboard": {
+            "line": 1,
+            "color": "positive"
+          }
+        },
+        {
+          "comand": "создать встречу",
+          "setter": "<set menu=event>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "change_region",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "📷 отчет",
+          "setter": "<set menu=report>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "report_title",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "вопрос",
+          "setter": "<set menu=question>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "question_title",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "куплю продам отдам",
+          "setter": "<set menu=market>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "market_title",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "помогите sos",
+          "setter": "<set menu=sos>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "sos_title",
+          "keyboard": {
+            "line": 3,
+            "color": "negative"
+          }
+        },
+        {
+          "comand": "велоквест",
+          "setter": "<set menu=quest>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "quest",
+          "keyboard": {
+            "line": 3,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "велотур",
+          "setter": "<set menu=tour>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "tour",
+          "keyboard": {
+            "line": 3,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "велотур",
+          "hide": "true",
+          "setter": "<set menu=tour>",
+          "change_text": "<star>",
+          "question": "<call>null_uservars</call>",
+          "go_to": "tour"
+        }
+      ]
+    }
+  ]
+}

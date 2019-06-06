@@ -1,0 +1,125 @@
+const { DateTime, Settings } = require("luxon");
+Settings.defaultZoneName = "Asia/Yekaterinburg";
+Settings.defaultLocale = "ru";
+const EkbDateTime = DateTime.local();
+const Markup = require("node-vk-bot-api/lib/markup");
+const TEMPLATE_MENU_HELP = [Markup.button("Меню", "default"), Markup.button("Помощь", "default")]
+// array with dates for event topics
+const template_event = () => {
+  let arr = [];
+  let i;
+  for (i = 0; i < 8; i++) {
+    arr.push(
+      EkbDateTime.plus({ day: i }).toFormat("dd-LL-yyyy ccc") +
+        (i <= 1
+          ? " (" + (EkbDateTime.plus({ day: i }).toRelativeCalendar() === 'today' ? 'сегодня': 'завтра') + ")"
+          : "")
+    );
+  }
+  return arr;
+};
+const arr_template_event = template_event();
+// array with dates for report topics
+const template_report = () => {
+  let arr = [];
+  let i;
+  for (i = 7; i > -1; i--) {
+    arr.push(
+      EkbDateTime.minus({ day: i }).toFormat("dd-LL-yyyy ccc") +
+        (i <= 1
+          ? " (" + (EkbDateTime.minus({ day: i }).toRelativeCalendar() === 'today' ? 'сегодня': 'вчера') + ")"
+          : "")
+    );
+  }
+  return arr;
+};
+const arr_template_report = template_report();
+module.exports = topic => {
+  switch (topic) {
+<%- locals.body %>
+
+    case "change_eventdate":
+      return [
+        [
+          Markup.button(arr_template_event[0], "primary"),
+          Markup.button(arr_template_event[1], "primary")
+        ],
+        [
+          Markup.button(arr_template_event[2], "primary"),
+          Markup.button(arr_template_event[3], "primary"),
+          Markup.button(arr_template_event[4], "primary")
+        ],
+        [
+          
+          Markup.button(arr_template_event[5], "primary"),
+          Markup.button(arr_template_event[6], "primary"),
+          Markup.button(arr_template_event[7], "primary")
+        ],
+        TEMPLATE_MENU_HELP
+      ];
+    case "change_reportdate":
+      return [
+        [
+          Markup.button(arr_template_report[0], "primary"),
+          Markup.button(arr_template_report[1], "primary"),
+          Markup.button(arr_template_report[2], "primary")
+        ],
+        [
+          
+          Markup.button(arr_template_report[3], "primary"),
+          Markup.button(arr_template_report[4], "primary"),
+          Markup.button(arr_template_report[5], "primary")
+        ],
+        [
+          Markup.button(arr_template_report[6], "primary"),
+          Markup.button(arr_template_report[7], "primary")
+        ],
+        TEMPLATE_MENU_HELP
+      ];
+    case "change_eventtime":
+    case "change_reporttime":
+      return [
+        [
+          Markup.button("05:00", "primary"),
+          Markup.button("06:00", "primary"),
+          Markup.button("07:00", "primary"),
+          Markup.button("08:00", "primary")
+        ],
+        [
+          Markup.button("09:00", "primary"),
+          Markup.button("10:00", "primary"),
+          Markup.button("11:00", "primary"),
+          Markup.button("12:00", "primary")
+        ],
+                [
+          Markup.button("13:00", "primary"),
+          Markup.button("14:00", "primary"),
+          Markup.button("15:00", "primary"),
+          Markup.button("16:00", "primary")
+        ],
+        [
+          Markup.button("17:00", "primary"),
+          Markup.button("18:00", "primary"),
+          Markup.button("19:00", "primary"),
+          Markup.button("20:00", "primary")
+        ],
+        [
+          Markup.button("21:00", "primary"),
+          Markup.button("22:00", "primary"),
+          Markup.button("23:00", "primary"),
+          Markup.button("00:00", "primary")
+        ],
+        TEMPLATE_MENU_HELP
+      ];
+      
+
+    //custom topics
+    // case "topic_name":
+    //   return [
+    //     TEMPLATE_MENU_HELP
+    //   ];
+    default:
+    return [TEMPLATE_MENU_HELP
+    ];
+  }
+};

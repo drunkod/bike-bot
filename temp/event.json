@@ -1,0 +1,254 @@
+{
+  "topics": [
+    {
+      "name": "change_eventdate",
+      "keyboard": "off",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Напишите дату встречи. Только в таком формате (ЧИСЛО-МЕСЯЦ-ГОД). Примеры:  01-08-2019 или 01/08/2019 \\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "<set hours=3>",
+          "change_text": "",
+          "question": "<call>checkDate <star></call>",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "name": "change_eventtime",
+      "keyboard": "off",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Напишите время встречи. Только в таком формате (ЧАСЫ:МИНУТЫ). Примеры: 09:10 или 09:10 \\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "<set hours=3>",
+          "change_text": "",
+          "question": "<call>checkTime <star></call>",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "name": "event_title",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Напишите краткое название поездки на велосипеде.\\n Например: 'Покатушка вокруг оз.Тургояк', 'Каштакский Бор', 'Велоночь вокруг Шершней', 'Велопрогулка в парке Гагарина'",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "<set msg_title=<formal>>",
+          "change_text": "краткое название: <get msg_title>",
+          "question": "",
+          "go_to": "event_hashtag"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_title=не указано>",
+          "change_text": "пропуск краткое название...",
+          "question": "",
+          "go_to": "event_hashtag",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "event_hashtag",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Выберите обозначение покатушки:\\n\\n  1⃣ - утро \\n 2⃣ - день\\n 3⃣ - вечер\\n 4⃣ - ночь\\n 5⃣ - велотур\\n 6⃣ - поход\\n 7⃣ - соревнование\\n 8⃣ - велоквест\\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "утро",
+          "setter": "<set hashtag=велоутро>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "event_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "день",
+          "setter": "<set hashtag=велодень>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "event_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "вечер",
+          "setter": "<set hashtag=веловечер>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "event_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "ночь",
+          "setter": "<set hashtag=велоночь>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "event_about",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "тур",
+          "setter": "<set hashtag=велотур>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "event_about",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "поход",
+          "setter": "<set hashtag=велопоход>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "event_about",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "соревнование",
+          "setter": "<set hashtag=велосоревнование>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "event_about",
+          "keyboard": {
+            "line": 3,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "квест",
+          "setter": "<set hashtag=велоквест>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "event_about",
+          "keyboard": {
+            "line": 3,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "event_about",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Вы можете добавить краткое описание-сообщение (указывать контактные данные не нужно).\\nПример: «С удовольствием составлю компанию по маршруту Парк Гагарина - АМЗ - Ленинский»\\n Либо 2⃣ - Пропустить\\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "<get msg_about>",
+          "question": "",
+          "go_to": "event_send"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_about=не указано>",
+          "change_text": "пропуск описание...",
+          "question": "",
+          "go_to": "event_send",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "event_send",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Ваше сообщение выглядит так:\\n\\n « Дата: <get eventdate> Время: <get eventtime>\\n В районе <get region_now>, рядом с <get now_place>, <get msg_about>.\\n ☎ Контакт для связи: <get mobile>.\\n <get firstName>. »\\n \\n  1⃣ - Отправить сообшение \\n  2⃣ - Изменить \\n ",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "отправить",
+          "setter": "",
+          "change_text": "Отправить...",
+          "question": "<call>send_notification</call> Спасибо за ввод данных!",
+          "go_to": "menu",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "изменить",
+          "setter": "",
+          "change_text": " Нет, изменить...",
+          "question": "Для изменения данных - ответьте, повторно на пару вопросов.\\n",
+          "go_to": "change_region",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    }
+  ]
+}

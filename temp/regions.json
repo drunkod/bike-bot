@@ -1,0 +1,73 @@
+{
+  "topics": [
+    {
+      "name": "change_region",
+      "keyboard": "[ Markup.button('1', 'primary'), Markup.button('2', 'primary'), Markup.button('3', 'primary'), Markup.button('4', 'primary') ], [ Markup.button('5', 'primary'), Markup.button('6', 'primary'), Markup.button('7', 'primary'), Markup.button('8', 'primary') ], [Markup.button('9', 'primary'), Markup.button('10', 'primary') ],",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": [
+            "Пожалуйста выберите район вашего проживания:",
+            "В каком районе СЕЙЧАС катаетесь?где Вы находитесь(катаетесь) в данный момент...",
+            "В каком районе планируете назначить место встречи?"
+          ],
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "название",
+          "setter": "<set mobile=не указан>",
+          "change_text": [
+            "<get region> район!",
+            "<get region_now> район!",
+            "<get region_now> район!"
+          ],
+          "question": "",
+          "go_to": "change_bikemodel"
+        }
+      ]
+    },
+    {
+      "name": "region",
+      "keyboard": "[ Markup.button('1', 'primary'), Markup.button('2', 'primary'), Markup.button('3', 'primary'), Markup.button('4', 'primary') ], [ Markup.button('5', 'primary'), Markup.button('6', 'primary'), Markup.button('7', 'primary'), Markup.button('8', 'primary') ], [Markup.button('9', 'primary'), Markup.button('10', 'primary') ],",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": [
+            "\\nВыберите близжайшее место к вашему дому:",
+            "\\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:",
+            "\\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:"
+          ],
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "<set bikemodel=<formal>>",
+          "change_text": "модель велосипеда: <get bikemodel>!",
+          "question": "Не забудьте поделиться фотографией вашего велосипеда в этот альбом 📷:vk.com/album-<bot owner_id_overhear>_<bot owner_id_album_bike_overhear> или добавить фото с мобильного vk.com/albums-<bot owner_id_overhear>‼",
+          "go_to": "change_temp"
+        },
+        {
+          "comand": "название",
+          "setter": "<set bikemodel=не указана>",
+          "change_text": [
+            "место: <get place>!",
+            "место: <get now_place>!",
+            "место встречи: <get now_place>!"
+          ],
+          "question": "Не забудьте поделиться фотографией вашего велосипеда в этот альбом 📷:vk.com/album-<bot owner_id_overhear>_<bot owner_id_album_bike_overhear> или добавить фото с мобильного vk.com/albums-<bot owner_id_overhear>‼",
+          "go_to": "change_temp"
+        }
+      ]
+    }
+  ]
+}

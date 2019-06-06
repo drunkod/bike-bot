@@ -1,0 +1,42 @@
+<%
+    let menu = locals.entry.all.menu;
+    let all = locals.entry.all;
+    let regions = locals.entry.all.data.regions;
+    let numbers = menu.numbers_template;
+    let quests_otvet = locals.entry.all.data.quests[0].tasks;
+-%>
+<%#
+if item.hide = hide topic
+if scenes.hide = hide scenes
+%>
+! var city = <%- all.data.city %>
+
+          ! var access_token_bikeeveryday_chelyabinsk_for_vk_msg = d301b92c97fd1bc043e9c7aaae1392cf6e4fe4a01f0c37e8d7aba210fc3208fe25e5584f39f60e279aad9 //ВК токен в сообщениях сообщества получается
+          ! var access_token_over_for_vk_msg = 5665564a22346949d55ed85e5dcdf132dc7c6cfc45e54fcb34ac168d01af0be69b4d0aaa0c6ee32182ff7 //ВК токен в сообщениях сообщества получается
+          ! var access_token_snow_for_vk_msg = a6c0efff9c447b190f801a5c81cf3d6acc56761eb71a09c3700b8f9a21d8df7081a4a854fafbe16e8a61c //ВК токен в сообщениях сообщества получается
+          ! var access_token_vk = 457936a6687e33889797e1c530dba56b820e236482281fd91e5cc51b2e11c89056dbe498e7ebeb8e295bd
+          ! var access_token_ad = 457936a6687e33889797e1c530dba56b820e236482281fd91e5cc51b2e11c89056dbe498e7ebeb8e295bd //ВК редактора группы  с помошью приложения, и постит на стенку
+          ! var owner_id_bike = 106594008 //71008034 ВК номер группы Велосипед
+        ! var hash_id_bike = bike_everyday_chelyabinsk //хэштег Велосипед группы
+        ! var owner_id_overhear = 90700964 //90700964 ВК номер группы Подслушано
+        ! var hash_id_overhear = bike_overhear_chelyabinsk //хэштег Подслушано группы
+				! var market_album_id = 215430169 //ВкНомер на фото альбом продажи Подслушано
+        ! var owner_id_album_bike_overhear = 213582438 //id альбом Подслушано с великами
+        ! var owner_id_market_album_bike_overhear = 215430169 //id альбом куплю\продажи Подслушано с великами
+        ! var question_link = <%- all.vk.overhear.question_board_id %> //Номер обсуждение вопросы Подслушано
+				! var market_link = <%- all.vk.overhear.market_board_id %> //Номер на обсуждение куплю\продажи Подслушано
+
+        ! var chatId_tg_overhear = bike_overhear_chelyabinsk //Telegram номер группы
+        ! var chatId_tg_bike = bike_everyday_chelyabinsk
+        ! var access_token_bikeeveryday_chelyabinsk_bot = 344780157:AAHqg74ljLQPrJVQ5eVyUrdVolntbFQjpoE
+        ! var chatId_tg_admin = 285400034 //Telegram номер админа
+
+
+! var list_regions = <br><%- regions.reduce((previousValue, region, index) => previousValue + " "+ numbers[index + 1] + " " + region.title + "<br>", ""); %>
+<% regions.forEach((region, i) => { -%>
+! var list_places_<%- i+1 %> = <br><%- region.places.reduce((previousValue, place, index) => previousValue + " "+ numbers[index + 1] + " " + place.title + "<br>", ""); %>
+<% }); -%>
+
+<% quests_otvet.forEach((task, i) => { -%>
+! var answer_task_<%- i+1 %> = <%- task.otvet %>
+<% }); -%>

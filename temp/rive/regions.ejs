@@ -1,0 +1,10 @@
+
+<% let allJson = locals.require('temp/all.json') -%>
+<% let regJson = locals.require('temp/regions.json') -%>
+<%- locals.widget('temp/rive/widgets/regions.ejs', {all: allJson, reg: regJson}) %>
+
+
+<%#
++ *
+- Привет, <get first_name> <get last_name>.\n\n{topic=menu}
+%>

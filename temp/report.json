@@ -1,0 +1,254 @@
+{
+  "topics": [
+    {
+      "name": "report_title",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Напишите краткое название прошедшей поездки на велосипеде.\\nНапример: 'Покатушка вокруг оз.Тургояк', 'Каштакский Бор', 'Велоночь вокруг Шершней', 'Велопрогулка в парке Гагарина'",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "<set msg_title=<formal>>",
+          "change_text": "краткое название: <get msg_title>",
+          "question": "",
+          "go_to": "report_hashtag"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_title=не указано>",
+          "change_text": "пропуск краткое название...",
+          "question": "",
+          "go_to": "report_hashtag",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "report_hashtag",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Выберите обозначение покатушки:\\n\\n  1⃣ - утро \\n 2⃣ - день\\n 3⃣ - вечер\\n 4⃣ - ночь\\n 5⃣ - велотур\\n 6⃣ - поход\\n 7⃣ - соревнование\\n 8⃣ - велоквест\\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "утро",
+          "setter": "<set hashtag=велоутро>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "change_reportdate",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "день",
+          "setter": "<set hashtag=велодень>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "change_reportdate",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "вечер",
+          "setter": "<set hashtag=веловечер>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "change_reportdate",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "ночь",
+          "setter": "<set hashtag=велоночь>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "change_reportdate",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "тур",
+          "setter": "<set hashtag=велотур>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "change_reportdate",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "поход",
+          "setter": "<set hashtag=велопоход>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "change_reportdate",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "соревнование",
+          "setter": "<set hashtag=велосоревнование>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "change_reportdate",
+          "keyboard": {
+            "line": 3,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "квест",
+          "setter": "<set hashtag=велоквест>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "change_reportdate",
+          "keyboard": {
+            "line": 3,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "change_reportdate",
+      "keyboard": "off",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Введите дату последней поездки-покатушки...\\n Только в таком формате (ЧИСЛО-МЕСЯЦ-ГОД). Примеры: 01-12-2019 или 01/12/2019 \\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": "<call>checkDate <star></call>",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "name": "change_reporttime",
+      "keyboard": "off",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Введите время последней поездки-покатушки...\\n Только в таком формате (ЧАСЫ:МИНУТЫ). Примеры:  09:09 \\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": "<call>checkTime <star></call>",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "name": "report_about",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Расскажите о покатушке более подробнее (развернутым текстом)\\nПример:\\n'Это было мощно. 90 км - это не шутки, если ехать не в маршрутке). Прикол: нас 20 человек остановились в какой-то деревне сделать фото с красивыми и здоровенными гусями. Местные девушки едут мимо на уазике и ржут над нами). И ещё прикол: Сергею не повезло: трижды колесо пробивал.'\\n\\nАльбом для фотографий будет создан автоматически тут vk.com/albums-<bot owner_id_overhear> \\nЛибо 2⃣ - Пропустить\\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "Ввод полного описания прошедшей поездки: <get msg_about>",
+          "question": "",
+          "go_to": "report_send"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_about=не указано>",
+          "change_text": "пропуск описание...",
+          "question": "",
+          "go_to": "report_send",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "report_send",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Проверьте пожалуйста, правильность введенных данных:\\n \\n `Категория: отчет, <get hashtag>\\n  Дата: <get eventdate> Время: <get eventtime>\\n  <get msg_title> \\n  <get msg_about>\\n Фотоальбом: <get vkalbum_link>\\n \\n Об авторе:\\n   Район: <get region>. Любимый темп езды: <get biketemp>. Мой велосипед: <get bikemodel>.\\n  <get firstName>.`\\n  \\n  Данные верны?\\n  1⃣ - Да\\n  2⃣ - Нет, изменить",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "отправить",
+          "setter": "",
+          "change_text": "Отправить...",
+          "question": "<call>send_report</call> Спасибо за ввод данных!\\n ‼ НЕ ЗАБУДЬТЕ добавить фотографии в альбом, с компьютера: <get vkalbum_link> или с мобильного: vk.com/albums-<bot owner_id_overhear>, найдя пустой альбом под названием '<get msg_title>'! \\n \\n ",
+          "go_to": "menu",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "изменить",
+          "setter": "",
+          "change_text": " Нет, изменить...",
+          "question": "Для изменения данных - ответьте, повторно на пару вопросов.\\n",
+          "go_to": "report_title",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+
+
+> topic change_eventdate includes global
+            
+    + подсказка
+    -  \n\nНапишите дату встречи. Только в таком формате (ЧИСЛО-МЕСЯЦ-ГОД). Примеры:  01-08-2019 или 01/08/2019 \n 
+            
+    + *
+    - <set hours=3> \n\n<call>checkDate <star></call> 
+        
+< topic
+> topic change_eventtime includes global
+            
+    + подсказка
+    -  \n\nНапишите время встречи. Только в таком формате (ЧАСЫ:МИНУТЫ). Примеры: 09:10 или 09:10 \n 
+            
+    + *
+    - <set hours=3> \n\n<call>checkTime <star></call> 
+        
+< topic
+> topic event_title includes global
+            
+    + подсказка
+    -  \n\nНапишите краткое название поездки на велосипеде.\n Например: 'Покатушка вокруг оз.Тургояк', 'Каштакский Бор', 'Велоночь вокруг Шершней', 'Велопрогулка в парке Гагарина' 
+            
+    + *
+    - <set msg_title=<formal>>▶Выбор:  краткое название: <get msg_title>\n\n {topic=event_hashtag}{@подсказка}
+            
+    + пропустить
+    - <set msg_title=не указано>▶Выбор:  пропуск краткое название...\n\n {topic=event_hashtag}{@подсказка}
+        
+< topic
+> topic event_hashtag includes global
+            
+    + подсказка
+    -  \n\nВыберите обозначение покатушки:\n\n  1⃣ - утро \n 2⃣ - день\n 3⃣ - вечер\n 4⃣ - ночь\n 5⃣ - велотур\n 6⃣ - поход\n 7⃣ - соревнование\n 8⃣ - велоквест\n 
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + утро
+    - <set hashtag=велоутро>▶Выбор:  <get hashtag>\n\n {topic=event_about}{@подсказка}
+            
+    + день
+    - <set hashtag=велодень>▶Выбор:  <get hashtag>\n\n {topic=event_about}{@подсказка}
+            
+    + вечер
+    - <set hashtag=веловечер>▶Выбор:  <get hashtag>\n\n {topic=event_about}{@подсказка}
+            
+    + ночь
+    - <set hashtag=велоночь>▶Выбор:  <get hashtag>\n\n {topic=event_about}{@подсказка}
+            
+    + тур
+    - <set hashtag=велотур>▶Выбор:  <get hashtag>\n\n {topic=event_about}{@подсказка}
+            
+    + поход
+    - <set hashtag=велопоход>▶Выбор:  <get hashtag>\n\n {topic=event_about}{@подсказка}
+            
+    + соревнование
+    - <set hashtag=велосоревнование>▶Выбор:  <get hashtag>\n\n {topic=event_about}{@подсказка}
+            
+    + квест
+    - <set hashtag=велоквест>▶Выбор:  <get hashtag>\n\n {topic=event_about}{@подсказка}
+        
+< topic
+> topic event_about includes global
+            
+    + подсказка
+    -  \n\nВы можете добавить краткое описание-сообщение (указывать контактные данные не нужно).\nПример: «С удовольствием составлю компанию по маршруту Парк Гагарина - АМЗ - Ленинский»\n Либо 2⃣ - Пропустить\n 
+            
+    + *
+    - ▶Выбор:  <get msg_about>\n\n {topic=event_send}{@подсказка}
+            
+    + пропустить
+    - <set msg_about=не указано>▶Выбор:  пропуск описание...\n\n {topic=event_send}{@подсказка}
+        
+< topic
+> topic event_send includes global
+            
+    + подсказка
+    -  \n\nВаше сообщение выглядит так:\n\n « Дата: <get eventdate> Время: <get eventtime>\n В районе <get region_now>, рядом с <get now_place>, <get msg_about>.\n ☎ Контакт для связи: <get mobile>.\n <get firstName>. »\n \n  1⃣ - Отправить сообшение \n  2⃣ - Изменить \n  
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + отправить
+    - ▶Выбор:  Отправить...\n\n<call>send_notification</call> Спасибо за ввод данных! {topic=menu}{@подсказка}
+            
+    + изменить
+    - ▶Выбор:   Нет, изменить...\n\nДля изменения данных - ответьте, повторно на пару вопросов.\n {topic=change_region}{@подсказка}
+        
+< topic
+

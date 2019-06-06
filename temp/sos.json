@@ -1,0 +1,203 @@
+{
+  "topics": [
+    {
+      "name": "sos_title",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Напишите короткий заголовок вашей проблемы.\\n Например: 'Украли мой велосипед FORWARD', 'Порвалась цепь', 'Пробил колесо', 'Не могу настроить переключатель', 'Слетела цепь'",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "<set msg_title=<formal>>",
+          "change_text": "названия проблемы: <get msg_title>",
+          "question": "",
+          "go_to": "sos_hashtag"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_title=не указано>",
+          "change_text": "пропуск ввода названия...",
+          "question": "",
+          "go_to": "sos_hashtag",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "sos_hashtag",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Выберите категорию объявления:\\n  1⃣ - пробил колесо  \\n  2⃣ - проблема с цепью\\n  3⃣ - сложность в настройке\\n  4⃣ - украли велосипед\\n  5⃣ - другое\\n ",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "пробилколесо",
+          "setter": "<set hashtag=пробилКолесо>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "sos_geo",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "проблемасцепью",
+          "setter": "<set hashtag=проблемаСцепью>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "sos_geo",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "настройка",
+          "setter": "<set hashtag=настройка>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "sos_geo",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "кража",
+          "setter": "<set hashtag=кража>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "sos_geo",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "другое",
+          "setter": "<set hashtag=другое>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "sos_geo",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "sos_geo",
+      "includes": "geo",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Выберите ваше местоположение на карте... Либо Нажмите:\\n  - 📎 `Прикрепить`,\\n - 🗺 `Карта` и укажите точку на карте 📍",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        }
+      ]
+    },
+    {
+      "name": "sos_about",
+      "hide": "true",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Введите подробное описание вашей проблемы...\\n  Пример: ... \\n  Добавить фото вы можете по этой ссылке: vk.com/albums-<bot owner_id_overhear>",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "Ввод полного описания объявления: <get msg_about>",
+          "question": "",
+          "go_to": "market_send"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_about=не указано>",
+          "change_text": "пропуск описание...",
+          "question": "",
+          "go_to": "market_send",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "sos_send",
+      "hide": "true",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Проверьте пожалуйста, правильность введенных данных:\\n  \\n  `Категория: объявление, <get hashtag>\\n  <get msg_title>\\n  <get msg_about>\\n \\n  Об авторе:\\n Контактный номер:<get mobile>\\n  <get firstName>.`\\n  \\n  Данные верны?\\n  1⃣ - Да\\n  2⃣ - Нет, изменить",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "отправить",
+          "setter": "",
+          "change_text": "Отправить...",
+          "question": "<call>send_board</call> Спасибо за ввод данных!\\n ‼ НЕ ЗАБУДЬТЕ следить за обсуждением по cсылке: vk.com/topic-<bot owner_id_overhear>_<bot market_link> и добавить фото товара в альбом:vk.com/album-<bot owner_id_overhear>_<bot market_album_id> или добавить фото с мобильного vk.com/albums-<bot owner_id_overhear>",
+          "go_to": "menu",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "изменить",
+          "setter": "",
+          "change_text": " Нет, изменить...",
+          "question": "Для изменения данных - ответьте, повторно на пару вопросов.\\n",
+          "go_to": "market_title",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    }
+  ]
+}

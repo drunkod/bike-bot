@@ -1,0 +1,8 @@
+<% locals.setLayout('temp/rive/layouts/base.ejs') -%>
+<% let allJson = locals.require('temp/all.json') -%>
+<%- locals.widget('temp/rive/widgets/global.ejs', 
+{all: allJson}) %>
+<%#
++ *
+- Привет, <get first_name> <get last_name>.\n\n{topic=menu}
+%>

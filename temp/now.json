@@ -1,0 +1,161 @@
+{
+  "topics": [
+    {
+      "name": "now_time",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Сколько часов планируете кататься? \\n\\n 1⃣ - 1 час\\n 2⃣ - 2 часа\\n 3⃣ - 3 часа\\n 4⃣ - 4 часа\\n 5⃣ - 5 часов\\n 6⃣ - 6 часов\\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "1",
+          "setter": "<set hours=1>",
+          "change_text": "<get hours> час(а)",
+          "question": "",
+          "go_to": "now_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "2",
+          "setter": "<set hours=2>",
+          "change_text": "<get hours> час(а)",
+          "question": "",
+          "go_to": "now_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "3",
+          "setter": "<set hours=3>",
+          "change_text": "<get hours> час(а)",
+          "question": "",
+          "go_to": "now_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "4",
+          "setter": "<set hours=4>",
+          "change_text": "<get hours> час(а)",
+          "question": "",
+          "go_to": "now_about",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "5",
+          "setter": "<set hours=5>",
+          "change_text": "<get hours> час(а)",
+          "question": "",
+          "go_to": "now_about",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "6",
+          "setter": "<set hours=6>",
+          "change_text": "<get hours> час(а)",
+          "question": "",
+          "go_to": "now_about",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "now_about",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Вы можете добавить краткое описание-сообщение (указывать контактные данные не нужно).\\nПример: «Катаюсь сейчас.. С удовольствием составлю компанию по маршруту...»\\n Либо 2⃣ - Пропустить\\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "<get msg_about>",
+          "question": "",
+          "go_to": "now_send"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_about=не указано>",
+          "change_text": "пропуск описание...",
+          "question": "",
+          "go_to": "now_send",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "now_send",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Ваше сообщение выглядит так:\\n\\n « Сейчас катаюсь в районе <get region_now>, рядом с <get now_place>, <get msg_about>.\\n Планирую кататься в течении <get hours>час(а)(ов) \\n ☎ Контакт для связи: <get mobile> \\n <get firstName>. »\\n \\n  1⃣ - Отправить сообшение \\n 2⃣ - Изменить \\n",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "отправить",
+          "setter": "",
+          "change_text": "Отправить...",
+          "question": "<call>send_notification</call> Спасибо за ввод данных!",
+          "go_to": "menu",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "изменить",
+          "setter": "",
+          "change_text": " Нет, изменить...",
+          "question": "Для изменения данных - ответьте, повторно на пару вопросов.\\n",
+          "go_to": "change_region",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    }
+  ]
+}

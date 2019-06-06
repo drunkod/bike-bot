@@ -1,0 +1,52 @@
+<%
+    let menu = locals.entry.all.menu;
+
+    let regions = locals.entry.all.data.regions;
+
+    let reg = locals.entry.reg.topics;
+    
+-%>
+
+<%#
+if topic name = top, create whithout topic name
+%>
+
+> topic change_region includes geo
+        + подсказка
+        * <get menu> == users => <%- reg[0].scenes[0].hint[0] %><bot list_regions>
+        * <get menu> == now =><%- reg[0].scenes[0].hint[1] %>\n<bot list_regions> 
+        * <get menu> == event =><%- reg[0].scenes[0].hint[2] %>\n<bot list_regions> 
+
+        + *
+        - <%- menu.hint.change_variant %> {@подсказка}
+        <% regions.forEach((region, i) => { -%>
+
+        + <%- i+1 %>
+        * <get menu> == users => <set region=<%- region.title %>><%- menu.input %> <%- reg[0].scenes[2].change_text[0] %>\n \n {topic=region_<%- i+1 %>}{@подсказка}
+        * <get menu> == now => <set region_now=<%- region.title %>><%- menu.input %> <%- reg[0].scenes[2].change_text[1] %>\n \n {topic=region_<%- i+1 %>}{@подсказка}
+        * <get menu> == event => <set region_now=<%- region.title %>><%- menu.input %> <%- reg[0].scenes[2].change_text[2] %>\n \n {topic=region_<%- i+1 %>}{@подсказка}
+
+<%}); -%>
+
+< topic 
+
+<% regions.forEach((region, i) => { -%>
+> topic region_<%- i+1 %> includes global
+        + *
+        - <%- menu.hint.change_variant %> {@подсказка}
+
+        + подсказка
+        * <get menu> == users => <%- reg[1].scenes[0].hint[0] %><bot list_places_<%- i+1 %>>
+        * <get menu> == now =><%- reg[1].scenes[0].hint[1] %><bot list_places_<%- i+1 %>>
+        * <get menu> == event =><%- reg[1].scenes[0].hint[2] %><bot list_places_<%- i+1 %>>
+        <% region.places.forEach((place, i) => { -%>
+
+        + <%- i+1 %>
+        * <get menu> == users => <set place=<%- place.title %>><set lat=<%- place.lat %>><set long=<%- place.long %>><%- menu.input %><%- reg[1].scenes[2].change_text[0] %>{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=<%- place.title %>><set lat=<%- place.lat %>><set long=<%- place.long %>><%- menu.input %><%- reg[1].scenes[2].change_text[1] %>{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=<%- place.title %>><set lat=<%- place.lat %>><set long=<%- place.long %>><%- menu.input %><%- reg[1].scenes[2].change_text[2] %>{topic=change_eventdate}{@подсказка}
+
+        <%}); -%>
+
+< topic
+<%}); -%>

@@ -1,0 +1,71 @@
+
+> topic question_title includes global
+            
+    + подсказка
+    -  \n\nНапишите краткое название вашего вопроса.\n Например: 'Выбор велосипеда', 'Где найти переключатель в продаже?', 'Посоветуйте модель велосипеда', 'Выбор маршрута для новичка' 
+            
+    + *
+    - <set msg_title=<formal>>▶Выбор:  название: <get msg_title>\n\n {topic=question_hashtag}{@подсказка}
+            
+    + пропустить
+    - <set msg_title=не указано>▶Выбор:  пропуск название...\n\n {topic=question_hashtag}{@подсказка}
+        
+< topic
+> topic question_hashtag includes global
+            
+    + подсказка
+    -  \n\nВыберите категорию вопроса:\n \n  1⃣ - совет по ремонту \n  2⃣ - выбор велосипеда\n  3⃣ - обновление\n  4⃣ - настройка\n  5⃣ - выбор маршрута\n  6⃣ - выбор магазина\n  7⃣ - другое\n  
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + ремонт
+    - <set hashtag=ремонт>▶Выбор:  <get hashtag>\n\n {topic=question_about}{@подсказка}
+            
+    + выборвелосипеда
+    - <set hashtag=выборВелосипеда>▶Выбор:  <get hashtag>\n\n {topic=question_about}{@подсказка}
+            
+    + обновление
+    - <set hashtag=обновление>▶Выбор:  <get hashtag>\n\n {topic=question_about}{@подсказка}
+            
+    + настройка
+    - <set hashtag=настройка>▶Выбор:  <get hashtag>\n\n {topic=question_about}{@подсказка}
+            
+    + выбормаршрута
+    - <set hashtag=выборМаршрута>▶Выбор:  <get hashtag>\n\n {topic=question_about}{@подсказка}
+            
+    + выбормагазина
+    - <set hashtag=выборМагазина>▶Выбор:  <get hashtag>\n\n {topic=question_about}{@подсказка}
+            
+    + другое
+    - <set hashtag=другое>▶Выбор:  <get hashtag>\n\n {topic=question_about}{@подсказка}
+        
+< topic
+> topic question_about includes global
+            
+    + подсказка
+    -  \n\nВведите подробное описание вашего вопроса...\n  Пример: ... \n  Добавить фото вы можете по этой ссылке: vk.com/topic-<bot owner_id_overhear>_<bot question_link> 
+            
+    + *
+    - ▶Выбор:  Ввод полного описания вопроса: <get msg_about>\n\n {topic=question_send}{@подсказка}
+            
+    + пропустить
+    - <set msg_about=не указано>▶Выбор:  пропуск описание...\n\n {topic=question_send}{@подсказка}
+        
+< topic
+> topic question_send includes global
+            
+    + подсказка
+    -  \n\nПроверьте пожалуйста, правильность введенных данных:\n  \n  `Категория:вопрос, <get hashtag>\n  <get msg_title>\n  <get msg_about>\n \n  Об авторе:\n  <get firstName>.`\n  \n  Данные верны?\n  1⃣ - Да\n  2⃣ - Нет, изменить 
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + отправить
+    - ▶Выбор:  Отправить...\n\n<call>send_board</call> Спасибо за ввод данных!\n ‼ НЕ ЗАБУДЬТЕ добавить фото и следить за обсуждением по cсылке: vk.com/topic-<bot owner_id_overhear>_<bot question_link> {topic=menu}{@подсказка}
+            
+    + изменить
+    - ▶Выбор:   Нет, изменить...\n\nДля изменения данных - ответьте, повторно на пару вопросов.\n {topic=question_title}{@подсказка}
+        
+< topic
+

@@ -1,0 +1,40 @@
+! version = 2.00
+
+
++ *
+* <get TYPE> == LEAD => Привет, <get firstName>!👋 Я велосипед!\n Я задам пару вопросов. Это займет пару минут.\n <set menu=users>{topic=change_region} {@подсказка}
+* <get TYPE> == CONTACT => Привет, <get firstName>\n\n {topic=menu} {@подсказка}
+* <get TYPE> == undefined => ...
+
+> topic send_to_admin
+      + *
+      - <set send_to_admin=<star>> Вы написали: <get send_to_admin>.\n\nСпасибо, за ваше предложение, мы обязательно ознакомимся с ним и свяжемся с Вами!\n\n <call>send_to_admin</call>{topic=menu} {@подсказка}
+
+< topic
+
+> topic geo
+		+ pinned location *
+		* <get menu> == now => <set region_now=указан на карте><set now_place=...> <call>geolocation <star></call>\n\n{topic=now_time}{@подсказка}
+		* <get menu> == event =>  <set region_now=указан на карте><set now_place=...> <call>geolocation <star></call>\n\n{topic=change_eventdate}{@подсказка}
+    * <get menu> == sos =>  <set region_now=указан на карте><set now_place=...> <call>geolocation <star></call>\n\n {topic=sos_about}{@подсказка}
+
+< topic
+
+> topic global
+	+ помощь
+	- Эти команды Вы можете использовать:\n
+	^ 'написать админу': Связь с администрацией группы.\n
+    ^ 'меню': Быстрый возврат в главное меню.\n
+    
+	+ написать админу
+	- Напишите в личные сообщения Александру: vk.me/sasha_erofeev
+
+	+ test
+	- сейчас в топике: <get topic>, сейчас в меню: <get menu>, firstName <get firstName>,  firstName <get lastName>, eventutcdate <get eventutcdate>, 
+    ^ eventtime <get eventtime>, eventdate <get eventdate>, social <get social>, TYPE <get TYPE>, social_id <get social_id>, long <get long>, lat <get lat>, event_title <get msg_title>, event_hashtag <get hashtag>,vk_aid <get vk_aid>, vkalbum_link <get vkalbum_link>,\n Проверьте пожалуйста, правильность введенных данных:\n \n `Район: <get region>. Любимый темп езды: <get biketemp>. Мой велосипед: <get bikemodel>.☎ Контакт для связи: <get mobile>.\n <get firstName>.`\n \n
+    ^ bikemodel <get bikemodel>, bikestyle <get bikestyle>, bikedistance <get bikedistance>,
+
+	+ меню
+	- Возврат в меню \n {topic=menu}{@подсказка}
+
+< topic

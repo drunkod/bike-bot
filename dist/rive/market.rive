@@ -1,0 +1,65 @@
+
+> topic market_title includes global
+            
+    + подсказка
+    -  \n\nНапишите краткое название вашего объявления.\n  Например: 'Продам велосипед Старт шоссе', 'Куплю бу велосипед', 'Отдам ненужные расходники', 'Куплю переключатель' 
+            
+    + *
+    - <set msg_title=<formal>>▶Выбор:  название: <get msg_title>\n\n {topic=market_hashtag}{@подсказка}
+            
+    + пропустить
+    - <set msg_title=не указано>▶Выбор:  пропуск ввода названия...\n\n {topic=market_hashtag}{@подсказка}
+        
+< topic
+> topic market_hashtag includes global
+            
+    + подсказка
+    -  \n\nВыберите категорию объявления:\n \n  1⃣ - куплю  \n  2⃣ - продам\n  3⃣ - отдам\n  4⃣ - приму в дар\n  5⃣ - другое\n   
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + куплю
+    - <set hashtag=куплю>▶Выбор:  <get hashtag>\n\n {topic=market_about}{@подсказка}
+            
+    + продам
+    - <set hashtag=продам>▶Выбор:  <get hashtag>\n\n {topic=market_about}{@подсказка}
+            
+    + отдам
+    - <set hashtag=отдам>▶Выбор:  <get hashtag>\n\n {topic=market_about}{@подсказка}
+            
+    + примувдар
+    - <set hashtag=примуВдар>▶Выбор:  <get hashtag>\n\n {topic=market_about}{@подсказка}
+            
+    + другое
+    - <set hashtag=другое>▶Выбор:  <get hashtag>\n\n {topic=market_about}{@подсказка}
+        
+< topic
+> topic market_about includes global
+            
+    + подсказка
+    -  \n\nВведите подробное описание вашего объявления...\n  Пример: ... \n  Добавить фото вы можете по этой ссылке: vk.com/albums-<bot owner_id_overhear>_<bot owner_id_market_album_bike_overhear> или с мобильного выберите альбом Барахолка тут: vk.com/albums-<bot owner_id_overhear> 
+            
+    + *
+    - ▶Выбор:  Ввод полного описания объявления: <get msg_about>\n\n {topic=market_send}{@подсказка}
+            
+    + пропустить
+    - <set msg_about=не указано>▶Выбор:  пропуск описание...\n\n {topic=market_send}{@подсказка}
+        
+< topic
+> topic market_send includes global
+            
+    + подсказка
+    -  \n\nПроверьте пожалуйста, правильность введенных данных:\n  \n  `Категория: объявление, <get hashtag>\n  <get msg_title>\n  <get msg_about>\n \n  Об авторе:\n Контактный номер:<get mobile>\n  <get firstName>.`\n  \n  Данные верны?\n  1⃣ - Да\n  2⃣ - Нет, изменить 
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + отправить
+    - ▶Выбор:  Отправить...\n\n<call>send_board</call> Спасибо за ввод данных!\n ‼ НЕ ЗАБУДЬТЕ следить за обсуждением по cсылке: vk.com/topic-<bot owner_id_overhear>_<bot market_link> и добавить фото товара в альбом:vk.com/album-<bot owner_id_overhear>_<bot market_album_id> или добавить фото с мобильного vk.com/albums-<bot owner_id_overhear> {topic=menu}{@подсказка}
+            
+    + изменить
+    - ▶Выбор:   Нет, изменить...\n\nДля изменения данных - ответьте, повторно на пару вопросов.\n {topic=market_title}{@подсказка}
+        
+< topic
+

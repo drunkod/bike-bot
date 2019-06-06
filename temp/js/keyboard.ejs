@@ -1,0 +1,68 @@
+
+<% locals.setLayout('temp/js/layouts/keyboard.ejs') -%>
+<% let allJson = locals.require('temp/all.json') -%>
+<% let eventJson = locals.require('temp/event.json') -%>
+<% let marketJson = locals.require('temp/market.json') -%>
+<% let menuJson = locals.require('temp/menu.json') -%>
+<% let nowJson = locals.require('temp/now.json') -%>
+<% let questionJson = locals.require('temp/question.json') -%>
+<% let regionsJson = locals.require('temp/regions.json') -%>
+<% let registrationJson = locals.require('temp/registration.json') -%>
+<% let reportJson = locals.require('temp/report.json') -%>
+<% let sosJson = locals.require('temp/sos.json') -%>
+<% let tourJson = locals.require('temp/tour.json') -%>
+<%- locals.widget('temp/js/widgets/keyboard.ejs',
+ {all: allJson,
+ event: eventJson,  
+ market: marketJson,
+ menu: menuJson, 
+ now: nowJson, 
+ question: questionJson, 
+ regions: regionsJson, 
+ registration: registrationJson, 
+ report: reportJson, 
+ sos: sosJson, 
+ tour: tourJson}) %>
+
+
+<%#
+const Markup = require("node-vk-bot-api/lib/markup");
+module.exports = topic => {
+  switch (topic) {
+    case "change_region":
+    case "region_1":
+    case "region_2":
+    case "region_3":
+    case "region_4":
+    case "region_5":
+    case "region_6":
+    case "region_7":
+    case "region_8":
+    case "region_9":
+    case "region_10":
+    case "menu":
+    case "event_hashtag":
+    case "report_hashtag":
+    case "question_hashtag":
+    case "market_hashtag":
+    case "sos_hashtag":
+    case "quest":
+    case "users":
+    case "loading":
+      return [
+        [
+          Markup.button("1", "primary"),
+          Markup.button("2", "primary"),
+          Markup.button("3", "primary"),
+          Markup.button("4", "primary")
+        ],
+        [
+          Markup.button("5", "primary"),
+          Markup.button("6", "primary"),
+          Markup.button("7", "primary"),
+          Markup.button("8", "primary")
+        ],
+        [Markup.button("9", "primary"), Markup.button("10", "primary")],
+        [Markup.button("menu", "default")]
+      ];
+%>

@@ -1,0 +1,137 @@
+<%
+    
+    let all_menu = locals.entry.all.menu;
+    let all_regions = locals.entry.all.data.regions;
+    let {
+        topics:menu
+    } = locals.entry.menu;
+
+    let {
+        topics: event
+    } = locals.entry.event;
+    let {
+        topics: market
+    } = locals.entry.market;
+    let {
+        topics: now
+    } = locals.entry.now;
+    let {
+        topics: question
+    } = locals.entry.question;
+    let {
+        topics: regions
+    } = locals.entry.regions;
+    let {
+        topics: registration
+    } = locals.entry.registration;
+    let {
+        topics: report
+    } = locals.entry.report;
+    let {
+        topics: sos
+    } = locals.entry.sos;
+    let {
+        topics: tour
+    } = locals.entry.tour;
+    let topics = [...event, ...market, 
+    ...menu, ...now,...question,...regions,
+...registration, ...report, ...sos, ...tour];
+    //console.log(topics);
+
+-%>
+
+<%#
+if topic name = top, create whithout topic name
+%>
+
+
+
+ <% topics.forEach(topic => { -%>
+ <% if(topic.keyboard !== 'off') { -%> 
+ <% if(topic.name === 'region') { -%> 
+ <% all_regions.forEach((region, i) => { -%>
+ case 'region_<%- i+1 %>':
+<% }); -%>
+<% } -%> 
+ case '<%- topic.name %>':
+    return [
+
+<%let filter_scenes1 = topic.scenes.filter(scene => scene.keyboard && scene.keyboard.line === 1);-%>
+<%filter_scenes1.forEach((scene, i) => { -%>
+<% if(i === 0) { -%>
+    [
+<% } -%>
+<% if(scene.keyboard) { -%>
+Markup.button('<%- scene.comand %>', '<%- scene.keyboard.color %>'),
+<% } -%>
+<% if(i === filter_scenes1.length - 1) { -%>
+    ],
+<% } -%>
+ <%}); -%>
+
+<%let filter_scenes2 = topic.scenes.filter(scene => scene.keyboard && scene.keyboard.line === 2);-%>
+<%filter_scenes2.forEach((scene, i) => { -%>
+<% if(i === 0) { -%>
+    [
+<% } -%>
+<% if(scene.keyboard) { -%>
+Markup.button('<%- scene.comand %>', '<%- scene.keyboard.color %>'),
+
+<% } -%>
+<% if(i === filter_scenes2.length - 1) { -%>
+    ],
+<% } -%>
+ <%}); -%>
+
+<%let filter_scenes3 = topic.scenes.filter(scene => scene.keyboard && scene.keyboard.line === 3);-%>
+<%filter_scenes3.forEach((scene, i) => { -%>
+<% if(i === 0) { -%>
+    [
+<% } -%>
+<% if(scene.keyboard) { -%>
+Markup.button('<%- scene.comand %>', '<%- scene.keyboard.color %>'),
+
+<% } -%>
+<% if(i === filter_scenes3.length - 1) { -%>
+    ],
+<% } -%>
+ <%}); -%>
+   
+<%let filter_scenes4 = topic.scenes.filter(scene => scene.keyboard && scene.keyboard.line === 4);-%>
+<%filter_scenes4.forEach((scene, i) => { -%>
+<% if(i === 0) { -%>
+    [
+<% } -%>
+<% if(scene.keyboard) { -%>
+Markup.button('<%- scene.comand %>', '<%- scene.keyboard.color %>'),
+
+<% } -%>
+<% if(i === filter_scenes4.length - 1) { -%>
+    ],
+<% } -%>
+ <%}); -%>
+
+<%let filter_scenes5 = topic.scenes.filter(scene => scene.keyboard && scene.keyboard.line === 5);-%>
+<%filter_scenes5.forEach((scene, i) => { -%>
+<% if(i === 0) { -%>
+    [
+<% } -%>
+<% if(scene.keyboard) { -%>
+Markup.button('<%- scene.comand %>', '<%- scene.keyboard.color %>'),
+
+<% } -%>
+<% if(i === filter_scenes5.length - 1) { -%>
+    ],
+<% } -%>
+ <%}); -%>
+
+    <% if(topic.keyboard === 'on') { -%>
+        [<%- all_menu.keyboard_default %>],
+    <% } else  {-%>
+    <%- topic.keyboard %>
+        
+    
+     <% } -%>   
+     ];
+     <% } -%>  
+ <%}); -%> 

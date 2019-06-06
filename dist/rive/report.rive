@@ -1,0 +1,93 @@
+
+
+> topic report_title includes global
+            
+    + подсказка
+    -  \n\nНапишите краткое название прошедшей поездки на велосипеде.\nНапример: 'Покатушка вокруг оз.Тургояк', 'Каштакский Бор', 'Велоночь вокруг Шершней', 'Велопрогулка в парке Гагарина' 
+            
+    + *
+    - <set msg_title=<formal>>▶Выбор:  краткое название: <get msg_title>\n\n {topic=report_hashtag}{@подсказка}
+            
+    + пропустить
+    - <set msg_title=не указано>▶Выбор:  пропуск краткое название...\n\n {topic=report_hashtag}{@подсказка}
+        
+< topic
+> topic report_hashtag includes global
+            
+    + подсказка
+    -  \n\nВыберите обозначение покатушки:\n\n  1⃣ - утро \n 2⃣ - день\n 3⃣ - вечер\n 4⃣ - ночь\n 5⃣ - велотур\n 6⃣ - поход\n 7⃣ - соревнование\n 8⃣ - велоквест\n 
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + утро
+    - <set hashtag=велоутро>▶Выбор:  <get hashtag>\n\n {topic=change_reportdate}{@подсказка}
+            
+    + день
+    - <set hashtag=велодень>▶Выбор:  <get hashtag>\n\n {topic=change_reportdate}{@подсказка}
+            
+    + вечер
+    - <set hashtag=веловечер>▶Выбор:  <get hashtag>\n\n {topic=change_reportdate}{@подсказка}
+            
+    + ночь
+    - <set hashtag=велоночь>▶Выбор:  <get hashtag>\n\n {topic=change_reportdate}{@подсказка}
+            
+    + тур
+    - <set hashtag=велотур>▶Выбор:  <get hashtag>\n\n {topic=change_reportdate}{@подсказка}
+            
+    + поход
+    - <set hashtag=велопоход>▶Выбор:  <get hashtag>\n\n {topic=change_reportdate}{@подсказка}
+            
+    + соревнование
+    - <set hashtag=велосоревнование>▶Выбор:  <get hashtag>\n\n {topic=change_reportdate}{@подсказка}
+            
+    + квест
+    - <set hashtag=велоквест>▶Выбор:  <get hashtag>\n\n {topic=change_reportdate}{@подсказка}
+        
+< topic
+> topic change_reportdate includes global
+            
+    + подсказка
+    -  \n\nВведите дату последней поездки-покатушки...\n Только в таком формате (ЧИСЛО-МЕСЯЦ-ГОД). Примеры: 01-12-2019 или 01/12/2019 \n 
+            
+    + *
+    -  \n\n<call>checkDate <star></call> 
+        
+< topic
+> topic change_reporttime includes global
+            
+    + подсказка
+    -  \n\nВведите время последней поездки-покатушки...\n Только в таком формате (ЧАСЫ:МИНУТЫ). Примеры:  09:09 \n 
+            
+    + *
+    -  \n\n<call>checkTime <star></call> 
+        
+< topic
+> topic report_about includes global
+            
+    + подсказка
+    -  \n\nРасскажите о покатушке более подробнее (развернутым текстом)\nПример:\n'Это было мощно. 90 км - это не шутки, если ехать не в маршрутке). Прикол: нас 20 человек остановились в какой-то деревне сделать фото с красивыми и здоровенными гусями. Местные девушки едут мимо на уазике и ржут над нами). И ещё прикол: Сергею не повезло: трижды колесо пробивал.'\n\nАльбом для фотографий будет создан автоматически тут vk.com/albums-<bot owner_id_overhear> \nЛибо 2⃣ - Пропустить\n 
+            
+    + *
+    - ▶Выбор:  Ввод полного описания прошедшей поездки: <get msg_about>\n\n {topic=report_send}{@подсказка}
+            
+    + пропустить
+    - <set msg_about=не указано>▶Выбор:  пропуск описание...\n\n {topic=report_send}{@подсказка}
+        
+< topic
+> topic report_send includes global
+            
+    + подсказка
+    -  \n\nПроверьте пожалуйста, правильность введенных данных:\n \n `Категория: отчет, <get hashtag>\n  Дата: <get eventdate> Время: <get eventtime>\n  <get msg_title> \n  <get msg_about>\n Фотоальбом: <get vkalbum_link>\n \n Об авторе:\n   Район: <get region>. Любимый темп езды: <get biketemp>. Мой велосипед: <get bikemodel>.\n  <get firstName>.`\n  \n  Данные верны?\n  1⃣ - Да\n  2⃣ - Нет, изменить 
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + отправить
+    - ▶Выбор:  Отправить...\n\n<call>send_report</call> Спасибо за ввод данных!\n ‼ НЕ ЗАБУДЬТЕ добавить фотографии в альбом, с компьютера: <get vkalbum_link> или с мобильного: vk.com/albums-<bot owner_id_overhear>, найдя пустой альбом под названием '<get msg_title>'! \n \n  {topic=menu}{@подсказка}
+            
+    + изменить
+    - ▶Выбор:   Нет, изменить...\n\nДля изменения данных - ответьте, повторно на пару вопросов.\n {topic=report_title}{@подсказка}
+        
+< topic
+

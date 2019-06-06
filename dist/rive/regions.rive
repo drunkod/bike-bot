@@ -1,0 +1,382 @@
+
+
+
+
+> topic change_region includes geo
+        + подсказка
+        * <get menu> == users => Пожалуйста выберите район вашего проживания:<bot list_regions>
+        * <get menu> == now =>В каком районе СЕЙЧАС катаетесь?где Вы находитесь(катаетесь) в данный момент...\n<bot list_regions> 
+        * <get menu> == event =>В каком районе планируете назначить место встречи?\n<bot list_regions> 
+
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+        
+        + 1
+        * <get menu> == users => <set region=Центральный>▶Выбор:  <get region> район!\n \n {topic=region_1}{@подсказка}
+        * <get menu> == now => <set region_now=Центральный>▶Выбор:  <get region_now> район!\n \n {topic=region_1}{@подсказка}
+        * <get menu> == event => <set region_now=Центральный>▶Выбор:  <get region_now> район!\n \n {topic=region_1}{@подсказка}
+
+
+        + 2
+        * <get menu> == users => <set region=Тополиная аллея>▶Выбор:  <get region> район!\n \n {topic=region_2}{@подсказка}
+        * <get menu> == now => <set region_now=Тополиная аллея>▶Выбор:  <get region_now> район!\n \n {topic=region_2}{@подсказка}
+        * <get menu> == event => <set region_now=Тополиная аллея>▶Выбор:  <get region_now> район!\n \n {topic=region_2}{@подсказка}
+
+
+        + 3
+        * <get menu> == users => <set region=Северо запад>▶Выбор:  <get region> район!\n \n {topic=region_3}{@подсказка}
+        * <get menu> == now => <set region_now=Северо запад>▶Выбор:  <get region_now> район!\n \n {topic=region_3}{@подсказка}
+        * <get menu> == event => <set region_now=Северо запад>▶Выбор:  <get region_now> район!\n \n {topic=region_3}{@подсказка}
+
+
+        + 4
+        * <get menu> == users => <set region=Парковый>▶Выбор:  <get region> район!\n \n {topic=region_4}{@подсказка}
+        * <get menu> == now => <set region_now=Парковый>▶Выбор:  <get region_now> район!\n \n {topic=region_4}{@подсказка}
+        * <get menu> == event => <set region_now=Парковый>▶Выбор:  <get region_now> район!\n \n {topic=region_4}{@подсказка}
+
+
+        + 5
+        * <get menu> == users => <set region=Калининский>▶Выбор:  <get region> район!\n \n {topic=region_5}{@подсказка}
+        * <get menu> == now => <set region_now=Калининский>▶Выбор:  <get region_now> район!\n \n {topic=region_5}{@подсказка}
+        * <get menu> == event => <set region_now=Калининский>▶Выбор:  <get region_now> район!\n \n {topic=region_5}{@подсказка}
+
+
+        + 6
+        * <get menu> == users => <set region=ЧМЗ>▶Выбор:  <get region> район!\n \n {topic=region_6}{@подсказка}
+        * <get menu> == now => <set region_now=ЧМЗ>▶Выбор:  <get region_now> район!\n \n {topic=region_6}{@подсказка}
+        * <get menu> == event => <set region_now=ЧМЗ>▶Выбор:  <get region_now> район!\n \n {topic=region_6}{@подсказка}
+
+
+        + 7
+        * <get menu> == users => <set region=ЧТЗ>▶Выбор:  <get region> район!\n \n {topic=region_7}{@подсказка}
+        * <get menu> == now => <set region_now=ЧТЗ>▶Выбор:  <get region_now> район!\n \n {topic=region_7}{@подсказка}
+        * <get menu> == event => <set region_now=ЧТЗ>▶Выбор:  <get region_now> район!\n \n {topic=region_7}{@подсказка}
+
+
+        + 8
+        * <get menu> == users => <set region=Ленинский>▶Выбор:  <get region> район!\n \n {topic=region_8}{@подсказка}
+        * <get menu> == now => <set region_now=Ленинский>▶Выбор:  <get region_now> район!\n \n {topic=region_8}{@подсказка}
+        * <get menu> == event => <set region_now=Ленинский>▶Выбор:  <get region_now> район!\n \n {topic=region_8}{@подсказка}
+
+
+        + 9
+        * <get menu> == users => <set region=АМЗ>▶Выбор:  <get region> район!\n \n {topic=region_9}{@подсказка}
+        * <get menu> == now => <set region_now=АМЗ>▶Выбор:  <get region_now> район!\n \n {topic=region_9}{@подсказка}
+        * <get menu> == event => <set region_now=АМЗ>▶Выбор:  <get region_now> район!\n \n {topic=region_9}{@подсказка}
+
+
+        + 10
+        * <get menu> == users => <set region=Копейск>▶Выбор:  <get region> район!\n \n {topic=region_10}{@подсказка}
+        * <get menu> == now => <set region_now=Копейск>▶Выбор:  <get region_now> район!\n \n {topic=region_10}{@подсказка}
+        * <get menu> == event => <set region_now=Копейск>▶Выбор:  <get region_now> район!\n \n {topic=region_10}{@подсказка}
+
+
+< topic 
+
+> topic region_1 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_1>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_1>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_1>
+        
+        + 1
+        * <get menu> == users => <set place=памятник Курчатову><set lat=55.15924><set long=61.36283>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=памятник Курчатову><set lat=55.15924><set long=61.36283>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=памятник Курчатову><set lat=55.15924><set long=61.36283>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 2
+        * <get menu> == users => <set place=ТРЦ Родник><set lat=55.17117><set long=61.35591>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=ТРЦ Родник><set lat=55.17117><set long=61.35591>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=ТРЦ Родник><set lat=55.17117><set long=61.35591>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 3
+        * <get menu> == users => <set place=у входа в парк Гагарина><set lat=55.162314><set long=61.373743>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=у входа в парк Гагарина><set lat=55.162314><set long=61.373743>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=у входа в парк Гагарина><set lat=55.162314><set long=61.373743>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 4
+        * <get menu> == users => <set place=памятник студенту ЮУрГУ><set lat=55.160273><set long=61.370224>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=памятник студенту ЮУрГУ><set lat=55.160273><set long=61.370224>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=памятник студенту ЮУрГУ><set lat=55.160273><set long=61.370224>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 5
+        * <get menu> == users => <set place=памятник Орленку на Алом поле><set lat=55.160454><set long=61.392921>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=памятник Орленку на Алом поле><set lat=55.160454><set long=61.392921>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=памятник Орленку на Алом поле><set lat=55.160454><set long=61.392921>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 6
+        * <get menu> == users => <set place=у входа на Кировку><set lat=55.160592><set long=61.400919>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=у входа на Кировку><set lat=55.160592><set long=61.400919>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=у входа на Кировку><set lat=55.160592><set long=61.400919>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 7
+        * <get menu> == users => <set place=у памятника Ленину на Пл. Революции><set lat=55.159685><set long=61.402539>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=у памятника Ленину на Пл. Революции><set lat=55.159685><set long=61.402539>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=у памятника Ленину на Пл. Революции><set lat=55.159685><set long=61.402539>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 8
+        * <get menu> == users => <set place=у входа в парк Пушкина><set lat=55.154784><set long=61.406863>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=у входа в парк Пушкина><set lat=55.154784><set long=61.406863>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=у входа в парк Пушкина><set lat=55.154784><set long=61.406863>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_2 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_2>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_2>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_2>
+        
+        + 1
+        * <get menu> == users => <set place=у памятника Трактору><set lat=55.163662><set long=61.302183>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=у памятника Трактору><set lat=55.163662><set long=61.302183>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=у памятника Трактору><set lat=55.163662><set long=61.302183>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_3 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_3>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_3>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_3>
+        
+        + 1
+        * <get menu> == users => <set place=Ледовая арена Трактор><set lat=55.174305><set long=61.289386>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Ледовая арена Трактор><set lat=55.174305><set long=61.289386>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Ледовая арена Трактор><set lat=55.174305><set long=61.289386>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 2
+        * <get menu> == users => <set place=у входа Лыжная база><set lat=55.192994><set long=61.295845>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=у входа Лыжная база><set lat=55.192994><set long=61.295845>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=у входа Лыжная база><set lat=55.192994><set long=61.295845>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 3
+        * <get menu> == users => <set place=гостиница Виктория><set lat=55.194218><set long=61.332268>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=гостиница Виктория><set lat=55.194218><set long=61.332268>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=гостиница Виктория><set lat=55.194218><set long=61.332268>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 4
+        * <get menu> == users => <set place=Университетская наб. - Молодогвардейцев><set lat=55.174141><set long=61.335861>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Университетская наб. - Молодогвардейцев><set lat=55.174141><set long=61.335861>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Университетская наб. - Молодогвардейцев><set lat=55.174141><set long=61.335861>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_4 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_4>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_4>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_4>
+        
+        + 1
+        * <get menu> == users => <set place=у магазина Проспект><set lat=55.209256><set long=61.285131>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=у магазина Проспект><set lat=55.209256><set long=61.285131>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=у магазина Проспект><set lat=55.209256><set long=61.285131>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_5 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_5>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_5>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_5>
+        
+        + 1
+        * <get menu> == users => <set place=Фонтан в Парк Никольская роща><set lat=55.186389><set long=61.443740>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Фонтан в Парк Никольская роща><set lat=55.186389><set long=61.443740>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Фонтан в Парк Никольская роща><set lat=55.186389><set long=61.443740>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 2
+        * <get menu> == users => <set place=Теплотехнического Института><set lat=55.184739><set long=61.398787>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Теплотехнического Института><set lat=55.184739><set long=61.398787>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Теплотехнического Института><set lat=55.184739><set long=61.398787>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 3
+        * <get menu> == users => <set place=Зал органной и камерной музыки Родина><set lat=55.171312><set long=61.399414>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Зал органной и камерной музыки Родина><set lat=55.171312><set long=61.399414>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Зал органной и камерной музыки Родина><set lat=55.171312><set long=61.399414>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 4
+        * <get menu> == users => <set place=пр. Победы - пр. Свердловский><set lat=55.183718><set long=61.386861>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=пр. Победы - пр. Свердловский><set lat=55.183718><set long=61.386861>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=пр. Победы - пр. Свердловский><set lat=55.183718><set long=61.386861>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_6 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_6>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_6>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_6>
+        
+        + 1
+        * <get menu> == users => <set place=ДК ЧМК><set lat=55.25829><set long=61.40522>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=ДК ЧМК><set lat=55.25829><set long=61.40522>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=ДК ЧМК><set lat=55.25829><set long=61.40522>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 2
+        * <get menu> == users => <set place=Кинотеатр Россия><set lat=55.25924><set long=61.39046>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Кинотеатр Россия><set lat=55.25924><set long=61.39046>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Кинотеатр Россия><set lat=55.25924><set long=61.39046>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 3
+        * <get menu> == users => <set place=у фонтана в ПКиО Тищенко><set lat=55.26104><set long=61.39112>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=у фонтана в ПКиО Тищенко><set lat=55.26104><set long=61.39112>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=у фонтана в ПКиО Тищенко><set lat=55.26104><set long=61.39112>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_7 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_7>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_7>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_7>
+        
+        + 1
+        * <get menu> == users => <set place=Сад победы главный вход><set lat=55.17012><set long=61.45379>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Сад победы главный вход><set lat=55.17012><set long=61.45379>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Сад победы главный вход><set lat=55.17012><set long=61.45379>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 2
+        * <get menu> == users => <set place=Театр ЧТЗ><set lat=55.16055><set long=61.45024>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Театр ЧТЗ><set lat=55.16055><set long=61.45024>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Театр ЧТЗ><set lat=55.16055><set long=61.45024>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 3
+        * <get menu> == users => <set place=Комсомольская площадь у танка><set lat=55.16031><set long=61.44131>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Комсомольская площадь у танка><set lat=55.16031><set long=61.44131>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Комсомольская площадь у танка><set lat=55.16031><set long=61.44131>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_8 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_8>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_8>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_8>
+        
+        + 1
+        * <get menu> == users => <set place=ТРЦ Алмаз><set lat=55.14481><set long=61.45063>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=ТРЦ Алмаз><set lat=55.14481><set long=61.45063>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=ТРЦ Алмаз><set lat=55.14481><set long=61.45063>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 2
+        * <get menu> == users => <set place=Кинотеатр Аврора><set lat=55.131><set long=61.43495>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Кинотеатр Аврора><set lat=55.131><set long=61.43495>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Кинотеатр Аврора><set lat=55.131><set long=61.43495>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 3
+        * <get menu> == users => <set place=Дворец культуры ЧТПЗ><set lat=55.11424><set long=61.45313>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Дворец культуры ЧТПЗ><set lat=55.11424><set long=61.45313>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Дворец культуры ЧТПЗ><set lat=55.11424><set long=61.45313>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 4
+        * <get menu> == users => <set place=Челябинский трубопрокатный завод><set lat=55.11653><set long=61.4709>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Челябинский трубопрокатный завод><set lat=55.11653><set long=61.4709>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Челябинский трубопрокатный завод><set lat=55.11653><set long=61.4709>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_9 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_9>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_9>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_9>
+        
+        + 1
+        * <get menu> == users => <set place=ТРК Кольцо><set lat=55.12747><set long=61.36892>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=ТРК Кольцо><set lat=55.12747><set long=61.36892>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=ТРК Кольцо><set lat=55.12747><set long=61.36892>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 2
+        * <get menu> == users => <set place=магазин Проспект><set lat=55.11447><set long=61.34723>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=магазин Проспект><set lat=55.11447><set long=61.34723>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=магазин Проспект><set lat=55.11447><set long=61.34723>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 3
+        * <get menu> == users => <set place=ТЦ Лента><set lat=55.10827><set long=61.35007>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=ТЦ Лента><set lat=55.10827><set long=61.35007>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=ТЦ Лента><set lat=55.10827><set long=61.35007>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+> topic region_10 includes global
+        + *
+        - <get firstName>, Пожалуйста выберите  {@подсказка}
+
+        + подсказка
+        * <get menu> == users => \nВыберите близжайшее место к вашему дому:<bot list_places_10>
+        * <get menu> == now =>\nВыберите одно из популярных мест для катания, где Вы находитесь(катаетесь) в данный момент:<bot list_places_10>
+        * <get menu> == event =>\nВыберите одно из популярных мест для встреч, где Вы планируете создать место встречи:<bot list_places_10>
+        
+        + 1
+        * <get menu> == users => <set place=Фонтан у Славы><set lat=55.113846><set long=61.611252>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Фонтан у Славы><set lat=55.113846><set long=61.611252>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Фонтан у Славы><set lat=55.113846><set long=61.611252>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 2
+        * <get menu> == users => <set place=Фонтан площадь Красных Партизан><set lat=55.113220><set long=61.621654>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Фонтан площадь Красных Партизан><set lat=55.113220><set long=61.621654>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Фонтан площадь Красных Партизан><set lat=55.113220><set long=61.621654>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+        + 3
+        * <get menu> == users => <set place=Мемориал погибшим в Великой Отечественной Войне><set lat=55.117567><set long=61.594012>▶Выбор: место: <get place>!{topic=change_mobile}{@подсказка}        
+        * <get menu> == now => <set now_place=Мемориал погибшим в Великой Отечественной Войне><set lat=55.117567><set long=61.594012>▶Выбор: место: <get now_place>!{topic=now_time}{@подсказка}
+        * <get menu> == event => <set now_place=Мемориал погибшим в Великой Отечественной Войне><set lat=55.117567><set long=61.594012>▶Выбор: место встречи: <get now_place>!{topic=change_eventdate}{@подсказка}
+
+        
+< topic
+
+
+

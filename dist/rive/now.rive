@@ -1,0 +1,57 @@
+
+
+> topic now_time includes global
+            
+    + подсказка
+    -  \n\nСколько часов планируете кататься? \n\n 1⃣ - 1 час\n 2⃣ - 2 часа\n 3⃣ - 3 часа\n 4⃣ - 4 часа\n 5⃣ - 5 часов\n 6⃣ - 6 часов\n 
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + 1
+    - <set hours=1>▶Выбор:  <get hours> час(а)\n\n {topic=now_about}{@подсказка}
+            
+    + 2
+    - <set hours=2>▶Выбор:  <get hours> час(а)\n\n {topic=now_about}{@подсказка}
+            
+    + 3
+    - <set hours=3>▶Выбор:  <get hours> час(а)\n\n {topic=now_about}{@подсказка}
+            
+    + 4
+    - <set hours=4>▶Выбор:  <get hours> час(а)\n\n {topic=now_about}{@подсказка}
+            
+    + 5
+    - <set hours=5>▶Выбор:  <get hours> час(а)\n\n {topic=now_about}{@подсказка}
+            
+    + 6
+    - <set hours=6>▶Выбор:  <get hours> час(а)\n\n {topic=now_about}{@подсказка}
+        
+< topic
+> topic now_about includes global
+            
+    + подсказка
+    -  \n\nВы можете добавить краткое описание-сообщение (указывать контактные данные не нужно).\nПример: «Катаюсь сейчас.. С удовольствием составлю компанию по маршруту...»\n Либо 2⃣ - Пропустить\n 
+            
+    + *
+    - ▶Выбор:  <get msg_about>\n\n {topic=now_send}{@подсказка}
+            
+    + пропустить
+    - <set msg_about=не указано>▶Выбор:  пропуск описание...\n\n {topic=now_send}{@подсказка}
+        
+< topic
+> topic now_send includes global
+            
+    + подсказка
+    -  \n\nВаше сообщение выглядит так:\n\n « Сейчас катаюсь в районе <get region_now>, рядом с <get now_place>, <get msg_about>.\n Планирую кататься в течении <get hours>час(а)(ов) \n ☎ Контакт для связи: <get mobile> \n <get firstName>. »\n \n  1⃣ - Отправить сообшение \n 2⃣ - Изменить \n 
+            
+    + *
+    -  \n\n {@подсказка}
+            
+    + отправить
+    - ▶Выбор:  Отправить...\n\n<call>send_notification</call> Спасибо за ввод данных! {topic=menu}{@подсказка}
+            
+    + изменить
+    - ▶Выбор:   Нет, изменить...\n\nДля изменения данных - ответьте, повторно на пару вопросов.\n {topic=change_region}{@подсказка}
+        
+< topic
+

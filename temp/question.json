@@ -1,0 +1,203 @@
+{
+  "topics": [
+    {
+      "name": "question_title",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Напишите краткое название вашего вопроса.\\n Например: 'Выбор велосипеда', 'Где найти переключатель в продаже?', 'Посоветуйте модель велосипеда', 'Выбор маршрута для новичка'",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "<set msg_title=<formal>>",
+          "change_text": "название: <get msg_title>",
+          "question": "",
+          "go_to": "question_hashtag"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_title=не указано>",
+          "change_text": "пропуск название...",
+          "question": "",
+          "go_to": "question_hashtag",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "question_hashtag",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Выберите категорию вопроса:\\n \\n  1⃣ - совет по ремонту \\n  2⃣ - выбор велосипеда\\n  3⃣ - обновление\\n  4⃣ - настройка\\n  5⃣ - выбор маршрута\\n  6⃣ - выбор магазина\\n  7⃣ - другое\\n ",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "ремонт",
+          "setter": "<set hashtag=ремонт>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "question_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "выборВелосипеда",
+          "setter": "<set hashtag=выборВелосипеда>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "question_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "обновление",
+          "setter": "<set hashtag=обновление>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "question_about",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "настройка",
+          "setter": "<set hashtag=настройка>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "question_about",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "выборМаршрута",
+          "setter": "<set hashtag=выборМаршрута>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "question_about",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "выборМагазина",
+          "setter": "<set hashtag=выборМагазина>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "question_about",
+          "keyboard": {
+            "line": 3,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "другое",
+          "setter": "<set hashtag=другое>",
+          "change_text": "<get hashtag>",
+          "question": "",
+          "go_to": "question_about",
+          "keyboard": {
+            "line": 3,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "question_about",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Введите подробное описание вашего вопроса...\\n  Пример: ... \\n  Добавить фото вы можете по этой ссылке: vk.com/topic-<bot owner_id_overhear>_<bot question_link>",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "Ввод полного описания вопроса: <get msg_about>",
+          "question": "",
+          "go_to": "question_send"
+        },
+        {
+          "comand": "пропустить",
+          "setter": "<set msg_about=не указано>",
+          "change_text": "пропуск описание...",
+          "question": "",
+          "go_to": "question_send",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "question_send",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "Проверьте пожалуйста, правильность введенных данных:\\n  \\n  `Категория:вопрос, <get hashtag>\\n  <get msg_title>\\n  <get msg_about>\\n \\n  Об авторе:\\n  <get firstName>.`\\n  \\n  Данные верны?\\n  1⃣ - Да\\n  2⃣ - Нет, изменить",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "отправить",
+          "setter": "",
+          "change_text": "Отправить...",
+          "question": "<call>send_board</call> Спасибо за ввод данных!\\n ‼ НЕ ЗАБУДЬТЕ добавить фото и следить за обсуждением по cсылке: vk.com/topic-<bot owner_id_overhear>_<bot question_link>",
+          "go_to": "menu",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "изменить",
+          "setter": "",
+          "change_text": " Нет, изменить...",
+          "question": "Для изменения данных - ответьте, повторно на пару вопросов.\\n",
+          "go_to": "question_title",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        }
+      ]
+    }
+  ]
+}

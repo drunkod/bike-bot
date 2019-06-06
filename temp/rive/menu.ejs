@@ -1,0 +1,11 @@
+
+<% let allJson = locals.require('temp/all.json') -%>
+<% let menuJson = locals.require('temp/menu.json') -%>
+<%- locals.widget('temp/rive/widgets/menu.ejs', 
+{all: allJson, menu: menuJson,}) %>
+
+
+<%#
++ *
+- Привет, <get first_name> <get last_name>.\n\n{topic=menu}
+%>
