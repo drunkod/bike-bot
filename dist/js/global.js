@@ -151,7 +151,6 @@ module.exports = class Global {
   set vkalbum_link(link) {
     this.rive.setUservar(this.chatId, "vkalbum_link", link);
   }
-
   // vk
   static init_vk_bot(public_type) {
     return new VkBot(this.getToken(public_type));
@@ -205,7 +204,7 @@ module.exports = class Global {
       this.social = social;
       this.social_id = this.social_id;
       this.group_id = this.group_id;
-      return true;
+      return true
     } else {
       return false;
     }

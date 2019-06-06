@@ -41,6 +41,42 @@ module.exports = class fireBase extends Global {
     // this.marketRef = db.collection("market");
     // this.routesRef = db.collection("routes");
   }
+  // аунтификация профиля
+  get email() {
+    return `${super.social_id}@${super.social}.com`;
+  }
+  get uid() {
+    return `${super.social}|${super.social_id}`;
+  }
+  async createAuthUser() {
+    const user = await auth.createUser(this.auth_data_lead);
+    console.log("User created", user);
+    let { customClaims } = this.auth_data_lead;
+    if (customClaims) {
+      console.log(
+        "Updating user " + user.uid + " with custom claims",
+        customClaims
+      );
+      await auth.setCustomUserClaims(user.uid, customClaims);
+    }
+
+    return user;
+  }
+
+  async updateAuthUser() {
+    const user = await auth.updateUser(this.uid, this.auth_data_lead);
+    console.log("Updating user", user);
+    let { customClaims } = this.auth_data_lead;
+    if (customClaims) {
+      console.log(
+        "Updating user " + user.uid + " with custom claims",
+        customClaims
+      );
+      await auth.setCustomUserClaims(user.uid, customClaims);
+    }
+
+    return user;
+  }
 
   static getIncrement(count) {
     console.log("setIncrement");
@@ -267,6 +303,25 @@ module.exports = class fireBase extends Global {
       },
       likes: super.likes,
       referal: super.referal
+    };
+  }
+  get auth_data_lead() {
+    return {
+      uid: this.uid,
+      email: this.email,
+      emailVerified: true,
+      displayName: super.firstName + " " + super.lastName,
+      photoURL: super.photo_url,
+      disabled: false,
+      customClaims: {
+        first_name: super.firstName,
+        id: super.social_id,
+        last_name: super.lastName,
+        social: super.social,
+        sex: super.sex,
+        city: "Челябинск",
+        referal: super.referal
+      }
     };
   }
   get link() {

@@ -62,6 +62,8 @@ module.exports = (rive, public_type) => {
               //если присутствуют реферальные параметры, записываем
               await G.save_referal_to_rive(ctx.message);
               // console.log(res2);
+              //сохранение профиля авторизации
+              await fc.createAuthUser();
               //сохранение профиля лида
               await fc.saveLeadData();
               // console.log(res3);
@@ -76,6 +78,8 @@ module.exports = (rive, public_type) => {
                 if (!doc.data().referal) {
                   //сохраняем данные реферала
                   await G.save_referal_to_rive(ctx.message);
+                  //обновление профиля авторизации
+                  await fc.updateAuthUser();
                   //обновление профиля лида
                   await fc.saveLeadData();
                 }
