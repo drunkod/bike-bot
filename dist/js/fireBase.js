@@ -78,6 +78,30 @@ module.exports = class fireBase extends Global {
     return user;
   }
 
+  async generateSignInWithEmailLink() {
+    const actionCodeSettings = {
+      // URL you want to redirect back to. The domain (www.example.com) for
+      // this URL must be whitelisted in the Firebase Console.
+      // url: 'https://bike-chel.firebaseapp.com/?email='+ usremail,
+      url: "http://" + process.env.URL_ACTIONCODESETTINGS + "/?email=" + this.email,
+      // This must be true for email link sign-in.
+      handleCodeInApp: true
+      //   iOS: {
+      //     bundleId: 'com.example.ios'
+      //   },
+      //   android: {
+      //     packageName: 'com.example.android',
+      //     installApp: true,
+      //     minimumVersion: '12'
+      //   },
+      //   // FDL custom domain.
+      //   dynamicLinkDomain: 'coolapp.page.link'
+    };
+    const link = await auth.generateSignInWithEmailLink(this.email, actionCodeSettings);
+    console.log("generateSignInWithEmailLink", link)
+    return link;
+  }
+
   static getIncrement(count) {
     console.log("setIncrement");
 
