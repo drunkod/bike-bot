@@ -58,10 +58,13 @@ module.exports = (rive, public_type) => {
               G.menu = "user";
               //получаем данные пользователя и записываем в переменные бота
               await G.save_user_to_rive(ctx.message, "vk");
+              // console.log(res1);
               //если присутствуют реферальные параметры, записываем
               await G.save_referal_to_rive(ctx.message);
+              // console.log(res2);
               //сохранение профиля лида
-              fc.saveLeadData();
+              await fc.saveLeadData();
+              // console.log(res3);
               next();
             } else {
               //если запись есть в базе данных, записываем переменные в бота
@@ -74,7 +77,7 @@ module.exports = (rive, public_type) => {
                   //сохраняем данные реферала
                   await G.save_referal_to_rive(ctx.message);
                   //обновление профиля лида
-                  fc.saveLeadData();
+                  await fc.saveLeadData();
                 }
               }
               //\/выход в сообщения дальше\/
@@ -96,7 +99,7 @@ module.exports = (rive, public_type) => {
     bot.on(ctx => {
       //console.log(rive);
       //если сообщение с буквами отчета 'О1' то не отвечаем
-      console.log(ctx);
+      // console.log(ctx);
       if (
         ctx.message.text.match(
           /(^о([0-9]{0,2})?$)|(^j([0-9]{0,2})?$)|(^отчет([0-9]{0,2})?$)/g

@@ -13,10 +13,12 @@ module.exports = class Global {
     this.rive = contextRive;
     this.bot = bot;
   }
-  //реферальные параметры
+  //to do валидация реферальных параметров
+  //реферальные параметры vk.me/bike_overhear_chelyabinsk?ref=vk_12&ref_source=bot
   get ref_id() {
     return this.rive.getUservar(this.chatId, "ref_id");
   }
+  //ref=vk_12
   set ref_id(ref_id) {
     if (ref_id.search("_") !== -1) {
       this.ref_social = ref_id.split("_")[0];
@@ -29,13 +31,14 @@ module.exports = class Global {
     return this.rive.getUservar(this.chatId, "ref_social");
   }
   set ref_social(ref_social) {
-    this.rive.setUservar(this.chatId, "ref_social", ref_social);
+    this.rive.setUservar(this.chatId, "ref_social", `${ref_social}`);
   }
+  // ref_source=bot
   get ref_source() {
     return this.rive.getUservar(this.chatId, "ref_source");
   }
   set ref_source(ref_source) {
-    this.rive.setUservar(this.chatId, "ref_source", ref_source);
+    this.rive.setUservar(this.chatId, "ref_source", `${ref_source}`);
   }
   get ref_name() {
     return this.rive.getUservar(this.chatId, "ref_name");
@@ -166,56 +169,45 @@ module.exports = class Global {
       //если присутствуют реферальные параметры
       this.ref_id = ref;
       this.ref_source = ref_source;
-      this.bot.execute(
-        "users.get",
-        {
-          user_ids: this.ref_id,
-          fields: "photo_200,sex"
-        },
-        body => {
-          console.log(
-            JSON.stringify("Реферал:" + body[0].first_name + body[0].last_name)
-          );
-          //записываем имя и пол реферала
+      const res = await this.bot.api("users.get", {
+        user_ids: this.ref_id,
+        fields: "photo_200,sex",
+        access_token: this.bot.settings.token
+      });
+      let { first_name, last_name, photo_200, sex } = res.response[0];
+      console.log(JSON.stringify("Реферал:" + first_name + last_name));
 
-          this.ref_name = body[0].first_name + " " + body[0].last_name;
-          this.ref_sex = body[0].sex;
-          return true;
-        }
-      );
+      //записываем имя и пол реферала
+
+      this.ref_name = first_name + " " + last_name;
+      this.ref_sex = sex;
+      return true;
     } else {
-      return;
+      return false;
     }
   }
 
   async save_user_to_rive({ from_id }, social) {
     if (from_id) {
-      this.bot.execute(
-        "users.get",
-        {
-          user_ids: from_id,
-          fields: "photo_200,sex"
-        },
-        body => {
-          console.log(
-            JSON.stringify(
-              "Пользователь:" + body[0].first_name + body[0].last_name
-            )
-          );
-          //записываем имя и пол реферала
+      const res = await this.bot.api("users.get", {
+        user_ids: from_id,
+        fields: "photo_200,sex",
+        access_token: this.bot.settings.token
+      });
+      let { first_name, last_name, photo_200, sex } = res.response[0];
+      console.log(JSON.stringify("Пользователь:" + first_name + last_name));
+      //записываем имя и пол реферала
 
-          this.firstName = body[0].first_name;
-          this.lastName = body[0].last_name;
-          this.photo_url = body[0].photo_200;
-          this.sex = body[0].sex;
-          this.social = social;
-          this.social_id = this.social_id;
-          this.group_id = this.group_id;
-          return true;
-        }
-      );
+      this.firstName = first_name;
+      this.lastName = last_name;
+      this.photo_url = photo_200;
+      this.sex = sex;
+      this.social = social;
+      this.social_id = this.social_id;
+      this.group_id = this.group_id;
+      return true;
     } else {
-      return;
+      return false;
     }
   }
   hashtags_template_social(
