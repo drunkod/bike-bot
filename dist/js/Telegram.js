@@ -1,8 +1,8 @@
 const fetch = require("node-fetch");
 const Global = require("./global");
 module.exports = class Telegram extends Global {
-  constructor(social, socialId, group_id, contextRive, token) {
-    super(social, socialId, group_id, contextRive);
+  constructor(social, socialId, group_id, contextRive, bot, token) {
+    super(social, socialId, group_id, contextRive, bot);
     this.token = token;
   }
   async sendMessage() {

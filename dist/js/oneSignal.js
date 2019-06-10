@@ -1,8 +1,8 @@
 const fetch = require("node-fetch");
 const Global = require("./global");
 module.exports = class oneSignal extends Global {
-  constructor(social, socialId, group_id, contextRive, token, app_id) {
-    super(social, socialId, group_id, contextRive);
+  constructor(social, socialId, group_id, contextRive, bot, token, app_id) {
+    super(social, socialId, group_id, contextRive, bot);
     this.token = token;
     this.app_id = app_id;
   }

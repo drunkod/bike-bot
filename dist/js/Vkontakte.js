@@ -7,12 +7,13 @@ module.exports = class Vkontakte extends Global {
     socialId,
     group_id,
     contextRive,
+    bot,
     token_admin,
     token_group1,
     token_group2,
     api_version
   ) {
-    super(social, socialId, group_id, contextRive);
+    super(social, socialId, group_id, contextRive, bot);
     (this.token_admin = token_admin),
       (this.token_group1 = token_group1),
       (this.token_group2 = token_group2),

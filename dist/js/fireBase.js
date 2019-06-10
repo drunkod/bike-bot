@@ -26,8 +26,8 @@ const Global = require("./global");
 // const db = firebaseadmin.firestore();
 // db.settings({ timestampsInSnapshots: true });
 module.exports = class fireBase extends Global {
-  constructor(social, socialId, group_id, contextRive) {
-    super(social, socialId, group_id, contextRive);
+  constructor(social, socialId, group_id, contextRive, bot) {
+    super(social, socialId, group_id, contextRive, bot);
 
     // this.ratingRef = db.collection("rating");
     // this.historyPostRef = db.collection("history_post");

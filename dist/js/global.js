@@ -70,7 +70,11 @@ module.exports = class Global {
     return this.rive.getUservar(this.chatId, "change_route_link");
   }
   set change_route_link(link) {
-    this.rive.setUservar(this.chatId, "change_route_link", link);
+    this.getShortLink(link)
+      .then(link => {
+        this.rive.setUservar(this.chatId, "change_route_link", link);
+      })
+      .catch(err => console.log(err));
   }
 
   get social() {
@@ -211,11 +215,22 @@ module.exports = class Global {
       this.social = social;
       this.social_id = this.social_id;
       this.group_id = this.group_id;
-      return true
+      return true;
     } else {
       return false;
     }
   }
+  // generate short link
+  async getShortLink(url) {
+    const res = await this.bot.api("utils.getShortLink", {
+      url,
+      private: 0,
+      access_token: this.bot.settings.token
+    });
+    let { short_url } = await res.response;
+    return short_url;
+  }
+
   hashtags_template_social(
     hash_id_bike,
     hashtag_sex,

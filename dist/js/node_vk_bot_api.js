@@ -45,7 +45,7 @@ module.exports = (rive, public_type) => {
         rive,
         bot
       );
-      init(["vk", ctx.message.from_id, ctx.bot.settings.group_id, rive]);
+      init(["vk", ctx.message.from_id, ctx.bot.settings.group_id, rive, bot]);
       (async () => {
         try {
           var Uservars = G.Uservars;
