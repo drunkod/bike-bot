@@ -462,6 +462,23 @@ Markup.button('пропустить', 'primary'),
        
    
   
+ case 'change_route':
+    return [
+
+    [
+Markup.button('Напомнить позже', 'primary'),
+    ],
+ 
+
+   
+
+
+            [Markup.button('Меню', 'default'),Markup.button('Помощь', 'default'),],
+       
+     ];
+       
+   
+  
  case 'change_style':
     return [
 

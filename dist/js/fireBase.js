@@ -106,7 +106,7 @@ module.exports = class fireBase extends Global {
       actionCodeSettings
     );
     console.log("generateSignInWithEmailLink", link);
-    return link;
+    super.change_route_link = link;
   }
 
   static getIncrement(count) {

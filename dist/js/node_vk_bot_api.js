@@ -181,6 +181,17 @@ module.exports = (rive, public_type) => {
       console.log("Bot startPolling in " + public_type);
     });
 
+    rive.setSubroutine("create_change_route_link", function(rive, args) {
+      console.log(
+        ".setSubroutine(create_change_route_link>>>>>>>>>>" +
+          JSON.stringify(rive.currentUser())
+      );
+
+      fc.generateSignInWithEmailLink()
+        .then(link => console.log("create_change_route_link успешно"))
+        .catch(err => console.log(err));
+    });
+
     var checkDate = function(body, callback) {
       console.log("217>>>>>>>>>>" + JSON.stringify(rive.currentUser()));
       console.log("218>>>>>>>>>>" + JSON.stringify(body));

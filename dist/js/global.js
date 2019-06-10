@@ -65,6 +65,13 @@ module.exports = class Global {
       };
     }
   }
+  // link generate route
+  get change_route_link() {
+    return this.rive.getUservar(this.chatId, "change_route_link");
+  }
+  set change_route_link(link) {
+    this.rive.setUservar(this.chatId, "change_route_link", link);
+  }
 
   get social() {
     return this._social;
