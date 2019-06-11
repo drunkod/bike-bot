@@ -87,7 +87,7 @@ module.exports = class fireBase extends Global {
         "http://" +
         process.env.FB_URL_ACTION_CODE_SETTINGS +
         "/?email=" +
-        this.email,
+        this.email+ "&topic=" + super.topic,
       // This must be true for email link sign-in.
       handleCodeInApp: true
       //   iOS: {
