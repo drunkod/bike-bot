@@ -126,6 +126,27 @@ module.exports = (rive, public_type) => {
       ) {
         rive.setUservar(ctx.message.from_id, "msg_about", ctx.message.text);
       }
+      // связь с сайтом в топике с регистрацией || невидимая кнопка "продолжить"
+      if (
+        rive.getUservar(ctx.message.from_id, "topic") === "change_route" &&
+        ctx.message.text === "продолжить"
+      ) {
+        rive.setUservar(ctx.message.from_id, "topic", "change_style");
+        rive
+          .replyAsync(ctx.message.from_id, `подсказка`)
+          .then(function(reply) {
+            console.log("Bot>", reply);
+            //отправка ответного сообщения + клавиатура
+            // ctx.reply(
+            //   reply,
+            //   null,
+            //   Markup.keyboard(keyboard(G.topic)).oneTime()
+            // );
+          })
+          .catch(function(error) {
+            console.error("Error geo: ", error);
+          });
+      }
       if (ctx.message.geo) {
         // geo: Object { type: "point", coordinates: Object, place: Object }
         // coordinates: Object { latitude: 55.154893, longitude: 61.405635 }
