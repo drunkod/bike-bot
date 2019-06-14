@@ -115,7 +115,7 @@ module.exports = (rive, public_type) => {
       if (Number(ctx.message.peer_id) > 2000000000) {
         return;
       }
-      //отправка входящего сообщения в riverscript
+      //отправка входящего неформатированного сообщения в riverscript
       if (
         rive.getUservar(ctx.message.from_id, "topic") === "now_about" ||
         rive.getUservar(ctx.message.from_id, "topic") === "event_about" ||

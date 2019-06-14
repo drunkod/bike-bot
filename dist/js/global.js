@@ -622,7 +622,7 @@ module.exports = class Global {
     }
   }
   get mobile() {
-    return this.rive.getUservar(this.chatId, "mobile");
+    return this.rive.getUservar(this.chatId, "user_mobile");
   }
   get linkToMsg() {
     return `https://vk.me/id${this.chatId}`;

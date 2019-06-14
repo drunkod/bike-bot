@@ -50,7 +50,7 @@
 > topic market_send includes global
             
     + подсказка
-    -  \n\nПроверьте пожалуйста, правильность введенных данных:\n  \n  `Категория: объявление, <get hashtag>\n  <get msg_title>\n  <get msg_about>\n \n  Об авторе:\n Контактный номер:<get mobile>\n  <get firstName>.`\n  \n  Данные верны?\n  1⃣ - Да\n  2⃣ - Нет, изменить 
+    -  \n\nПроверьте пожалуйста, правильность введенных данных:\n  \n  `Категория: объявление, <get hashtag>\n  <get msg_title>\n  <get msg_about>\n \n  Об авторе:\n Контактный номер:<get user_mobile>\n  <get firstName>.`\n  \n  Данные верны?\n  1⃣ - Да\n  2⃣ - Нет, изменить 
             
     + *
     -  \n\n {@подсказка}

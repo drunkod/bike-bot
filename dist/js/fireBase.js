@@ -54,7 +54,7 @@ module.exports = class fireBase extends Global {
     let { customClaims } = this.auth_data_lead;
     if (customClaims) {
       console.log(
-        "Updating user " + user.uid + " with custom claims",
+        "createAuthUser " + user.uid + " with custom claims",
         customClaims
       );
       await auth.setCustomUserClaims(user.uid, customClaims);
@@ -69,7 +69,7 @@ module.exports = class fireBase extends Global {
     let { customClaims } = this.auth_data_lead;
     if (customClaims) {
       console.log(
-        "Updating user " + user.uid + " with custom claims",
+        "updateAuthUser " + user.uid + " with custom claims",
         customClaims
       );
       await auth.setCustomUserClaims(user.uid, customClaims);
@@ -87,7 +87,9 @@ module.exports = class fireBase extends Global {
         "http://" +
         process.env.FB_URL_ACTION_CODE_SETTINGS +
         "/?email=" +
-        this.email+ "&topic=" + super.topic,
+        this.email +
+        "&topic=" +
+        super.topic,
       // This must be true for email link sign-in.
       handleCodeInApp: true
       //   iOS: {

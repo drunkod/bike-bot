@@ -23,7 +23,7 @@
         },
         {
           "comand": "название",
-          "setter": "<set mobile=не указан>",
+          "setter": "<set user_mobile=не указан>",
           "change_text": [
             "<get region> район!",
             "<get region_now> район!",

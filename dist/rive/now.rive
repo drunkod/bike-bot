@@ -42,7 +42,7 @@
 > topic now_send includes global
             
     + подсказка
-    -  \n\nВаше сообщение выглядит так:\n\n « Сейчас катаюсь в районе <get region_now>, рядом с <get now_place>, <get msg_about>.\n Планирую кататься в течении <get hours>час(а)(ов) \n ☎ Контакт для связи: <get mobile> \n <get firstName>. »\n \n  1⃣ - Отправить сообшение \n 2⃣ - Изменить \n 
+    -  \n\nВаше сообщение выглядит так:\n\n « Сейчас катаюсь в районе <get region_now>, рядом с <get now_place>, <get msg_about>.\n Планирую кататься в течении <get hours>час(а)(ов) \n ☎ Контакт для связи: <get user_mobile> \n <get firstName>. »\n \n  1⃣ - Отправить сообшение \n 2⃣ - Изменить \n 
             
     + *
     -  \n\n {@подсказка}

@@ -13,15 +13,15 @@
         },
         {
           "comand": "*",
-          "setter": "<set mobile=<star>>",
-          "change_text": "номер телефона: <get mobile>",
+          "setter": "<set user_mobile=<star>>",
+          "change_text": "номер телефона: <get user_mobile>",
           "question": "",
           "go_to": "change_bikemodel"
         },
         {
           "comand": "пропустить",
-          "setter": "<set mobile=не указан>",
-          "change_text": "номер телефона: <get mobile>",
+          "setter": "<set user_mobile=не указан>",
+          "change_text": "номер телефона: <get user_mobile>",
           "question": "",
           "go_to": "change_bikemodel",
           "keyboard": {
@@ -792,7 +792,7 @@
         {
           "comand": "подсказка",
           "setter": "",
-          "hint": "Проверьте пожалуйста, правильность введенных данных:\\n\\n « Район: <get region>. Предпочитаю стиль катания: <get bikestyle> Cредняя длина-расстояние поездки:<get bikedistance> км. Люблю кататься <get bike_rain> и <get bikewinter>! Мой велосипед: <get bikemodel>.\\n☎ Контакт для связи: <get mobile>.\\n <get firstName>. »\\n \\n Данные верны?\\n 1⃣ - Да\\n 2⃣ - Нет, изменить\\n",
+          "hint": "Проверьте пожалуйста, правильность введенных данных:\\n\\n « Район: <get region>. Предпочитаю стиль катания: <get bikestyle> Cредняя длина-расстояние поездки:<get bikedistance> км. Люблю кататься <get bike_rain> и <get bikewinter>! Мой велосипед: <get bikemodel>.\\n☎ Контакт для связи: <get user_mobile>.\\n <get firstName>. »\\n \\n Данные верны?\\n 1⃣ - Да\\n 2⃣ - Нет, изменить\\n",
           "change_text": "",
           "question": ""
         },
