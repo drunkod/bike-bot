@@ -1,5 +1,6 @@
 const VK_ID_PUBLIC_OVER = process.env.VK_ID_PUBLIC_OVER;
 const VK_ID_PUBLIC_BIKE = process.env.VK_ID_PUBLIC_BIKE;
+const Jimp = require("jimp");
 const momenttz = require("moment-timezone");
 const { DateTime } = require("luxon");
 const EkbDateTime = DateTime.local().setZone("Asia/Yekaterinburg");
@@ -125,6 +126,12 @@ module.exports = class Global {
   set photo_url(name) {
     this.rive.setUservar(this.chatId, "photo_url", name);
   }
+  get photo_64() {
+    return this.rive.getUservar(this.chatId, "photo_64");
+  }
+  set photo_64(name) {
+    this.rive.setUservar(this.chatId, "photo_64", name);
+  }
   get topic() {
     return this.rive.getUservar(this.chatId, "topic");
   }
@@ -206,11 +213,18 @@ module.exports = class Global {
       });
       let { first_name, last_name, photo_200, sex } = res.response[0];
       console.log(JSON.stringify("Пользователь:" + first_name + last_name));
+      const image = await Jimp.read(photo_200);
+      const image_64 = await image
+        .resize(40, 40)
+        .quality(50)
+        .getBase64Async(Jimp.MIME_JPEG);
+
       //записываем имя и пол реферала
 
       this.firstName = first_name;
       this.lastName = last_name;
       this.photo_url = photo_200;
+      this.photo_64 = image_64;
       this.sex = sex;
       this.social = social;
       this.social_id = this.social_id;
@@ -819,6 +833,7 @@ module.exports = class Global {
       id: this.social_id,
       last_name: this.lastName,
       photo_url: this.photo_url,
+      photo_64: this.photo_64,
       sex: this.sex,
       type_social: this.social
     };

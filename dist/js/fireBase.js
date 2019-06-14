@@ -289,6 +289,7 @@ module.exports = class fireBase extends Global {
           id: super.social_id,
           last_name: super.lastName,
           photo_url: super.photo_url,
+          photo_64: super.photo_64,
           sex: super.sex,
           city: "Челябинск",
           region: super.region,
@@ -328,6 +329,7 @@ module.exports = class fireBase extends Global {
           id: super.social_id,
           last_name: super.lastName,
           photo_url: super.photo_url,
+          photo_64: super.photo_64,
           sex: super.sex,
           city: "Челябинск",
           data_bot: super.data_bot
