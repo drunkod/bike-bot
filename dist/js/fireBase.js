@@ -291,9 +291,9 @@ module.exports = class fireBase extends Global {
           photo_url: super.photo_url,
           sex: super.sex,
           city: "Челябинск",
-          mobile: super.mobile,
           region: super.region,
           place: super.place,
+          mobile: super.mobile,
           data_bot: super.data_bot
         },
         bike: {
@@ -302,9 +302,12 @@ module.exports = class fireBase extends Global {
           temp_name: super.temp_name,
           action_button: super.action_button,
           model: super.bike_model,
+          style: super.bike_style,
+          distance: super.bike_distance,
+          winter: super.bike_winter,
           rain: super.bike_rain,
-          speed: super.bike_temp,
-          winter: super.bike_winter
+          volunteer: super.bike_volunteer
+          // speed: super.bike_temp
         }
       },
       likes: super.likes,

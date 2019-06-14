@@ -129,7 +129,7 @@ module.exports = (rive, public_type) => {
       // связь с сайтом в топике с регистрацией || невидимая кнопка "продолжить"
       if (
         rive.getUservar(ctx.message.from_id, "topic") === "change_route" &&
-        ctx.message.text === "продолжить"
+        ctx.message.text.toLowerCase() === "продолжить"
       ) {
         rive.setUservar(ctx.message.from_id, "topic", "change_style");
         rive
@@ -775,9 +775,9 @@ module.exports = (rive, public_type) => {
       ${arr_like[Math.floor(Math.random() * arr_like.length)]}${rive.getUservar(
           chatId,
           "wintertemp"
-        )} и ${rive.getUservar(chatId, "raintemp")}. ${
+        )} и ${rive.getUservar(chatId, "user_bike_rain")}. ${
           arr_model[Math.floor(Math.random() * arr_model.length)]
-        }${rive.getUservar(chatId, "bikemodel")}`;
+        }${rive.getUservar(chatId, "user_bikemodel")}`;
         var about_user = `Об авторе:\n${
           arr_region[Math.floor(Math.random() * arr_region.length)]
         }${rive.getUservar(chatId, "region")}. 
@@ -788,9 +788,9 @@ module.exports = (rive, public_type) => {
       ${arr_like[Math.floor(Math.random() * arr_like.length)]}${rive.getUservar(
           chatId,
           "wintertemp"
-        )} и ${rive.getUservar(chatId, "raintemp")}. ${
+        )} и ${rive.getUservar(chatId, "user_bike_rain")}. ${
           arr_model[Math.floor(Math.random() * arr_model.length)]
-        }${rive.getUservar(chatId, "bikemodel")}`;
+        }${rive.getUservar(chatId, "user_bikemodel")}`;
         rive.setUservar(chatId, "anketa", anketa);
         rive.setUservar(chatId, "msgabout", about_user);
         let arr_hashtags = [
@@ -799,8 +799,8 @@ module.exports = (rive, public_type) => {
           rive.getUservar(chatId, "region"),
           rive.getUservar(chatId, "biketemp"),
           rive.getUservar(chatId, "wintertemp"),
-          rive.getUservar(chatId, "raintemp"),
-          rive.getUservar(chatId, "bikemodel")
+          rive.getUservar(chatId, "user_bike_rain"),
+          rive.getUservar(chatId, "user_bikemodel")
         ];
 
         vk.newUser()

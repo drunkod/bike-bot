@@ -78,7 +78,7 @@
 > topic report_send includes global
             
     + подсказка
-    -  \n\nПроверьте пожалуйста, правильность введенных данных:\n \n `Категория: отчет, <get hashtag>\n  Дата: <get eventdate> Время: <get eventtime>\n  <get msg_title> \n  <get msg_about>\n Фотоальбом: <get vkalbum_link>\n \n Об авторе:\n   Район: <get region>. Любимый темп езды: <get biketemp>. Мой велосипед: <get bikemodel>.\n  <get firstName>.`\n  \n  Данные верны?\n  1⃣ - Да\n  2⃣ - Нет, изменить 
+    -  \n\nПроверьте пожалуйста, правильность введенных данных:\n \n `Категория: отчет, <get hashtag>\n  Дата: <get eventdate> Время: <get eventtime>\n  <get msg_title> \n  <get msg_about>\n Фотоальбом: <get vkalbum_link>\n \n Об авторе:\n   Район: <get region>. Любимый темп езды: <get biketemp>. Мой велосипед: <get user_bikemodel>.\n  <get firstName>.`\n  \n  Данные верны?\n  1⃣ - Да\n  2⃣ - Нет, изменить 
             
     + *
     -  \n\n {@подсказка}

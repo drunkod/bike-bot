@@ -51,14 +51,14 @@
         },
         {
           "comand": "*",
-          "setter": "<set bikemodel=<formal>>",
-          "change_text": "модель велосипеда: <get bikemodel>!",
+          "setter": "<set user_bikemodel=<formal>>",
+          "change_text": "модель велосипеда: <get user_bikemodel>!",
           "question": "Не забудьте поделиться фотографией вашего велосипеда в этот альбом 📷:vk.com/album-<bot owner_id_overhear>_<bot owner_id_album_bike_overhear> или добавить фото с мобильного vk.com/albums-<bot owner_id_overhear>‼",
           "go_to": "change_temp"
         },
         {
           "comand": "название",
-          "setter": "<set bikemodel=не указана>",
+          "setter": "<set user_bikemodel=не указана>",
           "change_text": [
             "место: <get place>!",
             "место: <get now_place>!",

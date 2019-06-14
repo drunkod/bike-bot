@@ -40,8 +40,8 @@ if scenes.hide = hide scenes
 
 	+ test
 	- сейчас в топике: <get topic>, сейчас в меню: <get menu>, firstName <get firstName>,  firstName <get lastName>, eventutcdate <get eventutcdate>, 
-    ^ eventtime <get eventtime>, eventdate <get eventdate>, social <get social>, TYPE <get TYPE>, social_id <get social_id>, long <get long>, lat <get lat>, event_title <get msg_title>, event_hashtag <get hashtag>,vk_aid <get vk_aid>, vkalbum_link <get vkalbum_link>,\n Проверьте пожалуйста, правильность введенных данных:\n \n `Район: <get region>. Любимый темп езды: <get biketemp>. Мой велосипед: <get bikemodel>.☎ Контакт для связи: <get user_mobile>.\n <get firstName>.`\n \n
-    ^ bikemodel <get bikemodel>, bikestyle <get bikestyle>, bikedistance <get bikedistance>,
+    ^ eventtime <get eventtime>, eventdate <get eventdate>, social <get social>, TYPE <get TYPE>, social_id <get social_id>, long <get long>, lat <get lat>, event_title <get msg_title>, event_hashtag <get hashtag>,vk_aid <get vk_aid>, vkalbum_link <get vkalbum_link>,\n Проверьте пожалуйста, правильность введенных данных:\n \n `Район: <get region>. Любимый темп езды: <get biketemp>. Мой велосипед: <get user_bikemodel>.☎ Контакт для связи: <get user_mobile>.\n <get firstName>.`\n \n
+    ^ bikemodel <get user_bikemodel>, bikestyle <get user_bikestyle>, bikedistance <get user_bikedistance>,
 
 	+ меню
 	- Возврат в меню \n {topic=menu}{@подсказка}

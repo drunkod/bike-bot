@@ -607,8 +607,8 @@ module.exports = class Global {
             this.rive.getUservar(this.chatId, "region"),
             this.rive.getUservar(this.chatId, "biketemp"),
             this.rive.getUservar(this.chatId, "wintertemp"),
-            this.rive.getUservar(this.chatId, "raintemp"),
-            this.rive.getUservar(this.chatId, "bikemodel")
+            this.rive.getUservar(this.chatId, "user_bike_rain"),
+            this.rive.getUservar(this.chatId, "user_bikemodel")
           ) +
           " #велосипед #ВелосипедКаждыйДень #Челябинск"
         );
@@ -701,6 +701,41 @@ module.exports = class Global {
         return false;
     }
   }
+  // user_bike registration vars
+  get temp_name() {
+    switch (this.menu) {
+      case "question":
+        return "вопрос";
+        break;
+      case "now":
+        return "сейчас";
+        break;
+      case "event":
+        return "встреча";
+        break;
+      case "report":
+        return "отчет";
+        break;
+      case "market":
+        return "маркет";
+        break;
+      case "sos":
+        return "sos";
+        break;
+      case "chat":
+        return "беседа";
+        break;
+      case "tour":
+        return "велотур";
+        break;
+      case "users":
+        return this.hashtag_sex;
+        break;
+      default:
+        return "добавить в temp_name";
+        break;
+    }
+  }
   get action_button() {
     switch (this.menu) {
       case "question":
@@ -730,17 +765,28 @@ module.exports = class Global {
     }
   }
   get bike_model() {
-    return this.rive.getUservar(this.chatId, "bikemodel");
+    return this.rive.getUservar(this.chatId, "user_bikemodel");
+  }
+  get bike_style() {
+    return this.rive.getUservar(this.chatId, "user_bikestyle");
+  }
+  get bike_distance() {
+    return this.rive.getUservar(this.chatId, "user_bikedistance");
+  }
+  get bike_winter() {
+    return this.rive.getUservar(this.chatId, "user_bikewinter");
   }
   get bike_rain() {
-    return this.rive.getUservar(this.chatId, "raintemp");
+    return this.rive.getUservar(this.chatId, "user_bike_rain");
   }
+  get bike_volunteer() {
+    return this.rive.getUservar(this.chatId, "user_bike_volunteer");
+  }
+
   get bike_temp() {
     return this.rive.getUservar(this.chatId, "biketemp");
   }
-  get bike_winter() {
-    return this.rive.getUservar(this.chatId, "wintertemp");
-  }
+
   get title_quotes() {
     return `'${this.crop_title}'`;
   }
@@ -776,40 +822,6 @@ module.exports = class Global {
       sex: this.sex,
       type_social: this.social
     };
-  }
-  get temp_name() {
-    switch (this.menu) {
-      case "question":
-        return "вопрос";
-        break;
-      case "now":
-        return "сейчас";
-        break;
-      case "event":
-        return "встреча";
-        break;
-      case "report":
-        return "отчет";
-        break;
-      case "market":
-        return "маркет";
-        break;
-      case "sos":
-        return "sos";
-        break;
-      case "chat":
-        return "беседа";
-        break;
-      case "tour":
-        return "велотур";
-        break;
-      case "users":
-        return this.hashtag_sex;
-        break;
-      default:
-        return "добавить в temp_name";
-        break;
-    }
   }
 
   get time() {

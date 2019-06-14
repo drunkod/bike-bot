@@ -44,15 +44,15 @@
         },
         {
           "comand": "*",
-          "setter": "<set bikemodel=<formal>>",
-          "change_text": " модель велосипеда: <get bikemodel>!",
+          "setter": "<set user_bikemodel=<formal>>",
+          "change_text": " модель велосипеда: <get user_bikemodel>!",
           "question": "Не забудьте поделиться фотографией вашего велосипеда в этот альбом 📷:vk.com/album-<bot owner_id_overhear>_<bot owner_id_album_bike_overhear> или добавить фото с мобильного vk.com/albums-<bot owner_id_overhear>‼\\n\\n",
           "go_to": "change_route"
         },
         {
           "comand": "пропустить",
-          "setter": "<set bikemodel=не указана>",
-          "change_text": " модель велосипеда: <get bikemodel>!",
+          "setter": "<set user_bikemodel=не указана>",
+          "change_text": " модель велосипеда: <get user_bikemodel>!",
           "question": "Не забудьте поделиться фотографией вашего велосипеда в этот альбом 📷:vk.com/album-<bot owner_id_overhear>_<bot owner_id_album_bike_overhear> или добавить фото с мобильного vk.com/albums-<bot owner_id_overhear>‼\\n\\n",
           "go_to": "change_route"
         }
@@ -78,7 +78,7 @@
         {
           "comand": "Напомнить позже",
           "comand_info": "Напомните позже",
-          "setter": "<set route=remind_later>",
+          "setter": "<set user_route=remind_later>",
           "change_text": "Хорошо, я напомню вам в личные сообщения, чуть позже.",
           "question": "",
           "go_to": "change_style",
@@ -109,8 +109,8 @@
         {
           "comand": "Прогулки",
           "comand_info": "Прогулки по городу, парку, двору рядом с домом",
-          "setter": "<set bikestyle=Прогулка>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Прогулка>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -121,8 +121,8 @@
         {
           "comand": "Кросс кантри",
           "comand_info": "Кросс-кантри",
-          "setter": "<set bikestyle=Кросс кантри>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Кросс кантри>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -133,8 +133,8 @@
         {
           "comand": "Поход выходного дня",
           "comand_info": "Поход выходного дня (1-2 дня)",
-          "setter": "<set bikestyle=Поход выходного дня>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Поход выходного дня>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -145,8 +145,8 @@
         {
           "comand": "Даунхил Фрирайд",
           "comand_info": "Даунхил, Фрирайд",
-          "setter": "<set bikestyle=Даунхил Фрирайд>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Даунхил Фрирайд>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -157,8 +157,8 @@
         {
           "comand": "Шоссе",
           "comand_info": "Шоссе",
-          "setter": "<set bikestyle=Шоссе>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Шоссе>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -169,8 +169,8 @@
         {
           "comand": "Длительные велопоходы",
           "comand_info": "Длительные велопоходы (от 3х дней и больше)",
-          "setter": "<set bikestyle=Длительные велопоходы>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Длительные велопоходы>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -181,8 +181,8 @@
         {
           "comand": "Рандоннёр",
           "comand_info": "Рандоннёр (длительные поездки-бреветы с лимитом времени)",
-          "setter": "<set bikestyle=Рандоннёр>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Рандоннёр>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -193,8 +193,8 @@
         {
           "comand": "Трюковые и гравити",
           "comand_info": "Трюковые и гравити дисциплины(стрит,дерт, парк, BMX, памп, 4х, BMX Race)",
-          "setter": "<set bikestyle=Трюковые и гравити>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Трюковые и гравити>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -205,8 +205,8 @@
         {
           "comand": "Трек",
           "comand_info": "Трек",
-          "setter": "<set bikestyle=Трек>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Трек>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -217,8 +217,8 @@
         {
           "comand": "Эндуро",
           "comand_info": "Эндуро",
-          "setter": "<set bikestyle=Эндуро>",
-          "change_text": "стиль катания: <get bikestyle>!",
+          "setter": "<set user_bikestyle=Эндуро>",
+          "change_text": "стиль катания: <get user_bikestyle>!",
           "question": "",
           "go_to": "change_distance",
           "keyboard": {
@@ -248,8 +248,8 @@
         {
           "comand": "затрудняюсь ответить/небольшие прогулки",
           "comand_info": "затрудняюсь ответить (не веду подсчет, небольшие прогулки по городу, парку, двору рядом с домом)",
-          "setter": "<set bikedistance=0-10>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=0-10>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -260,8 +260,8 @@
         {
           "comand": "0-10",
           "comand_info": "до 10км",
-          "setter": "<set bikedistance=0-10>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=0-10>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -272,8 +272,8 @@
         {
           "comand": "10-20",
           "comand_info": "10-20км",
-          "setter": "<set bikedistance=10-20>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=10-20>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -284,8 +284,8 @@
         {
           "comand": "20-40",
           "comand_info": "20-40км",
-          "setter": "<set bikedistance=20-40>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=20-40>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -296,8 +296,8 @@
         {
           "comand": "40-60",
           "comand_info": "40-60км",
-          "setter": "<set bikedistance=40-60>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=40-60>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -308,8 +308,8 @@
         {
           "comand": "60-80",
           "comand_info": "60-80км",
-          "setter": "<set bikedistance=60-80>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=60-80>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -320,8 +320,8 @@
         {
           "comand": "80-100",
           "comand_info": "80-100км",
-          "setter": "<set bikedistance=80-100>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=80-100>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -332,8 +332,8 @@
         {
           "comand": "100-150",
           "comand_info": "100-150км",
-          "setter": "<set bikedistance=100-150>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=100-150>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -344,8 +344,8 @@
         {
           "comand": "150-200",
           "comand_info": "150-200км",
-          "setter": "<set bikedistance=150-200>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=150-200>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -356,8 +356,8 @@
         {
           "comand": "200-300",
           "comand_info": "200-300км",
-          "setter": "<set bikedistance=200-300>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=200-300>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -368,8 +368,8 @@
         {
           "comand": "300-1000",
           "comand_info": "300-1000км",
-          "setter": "<set bikedistance=300-1000>",
-          "change_text": "средняя длина-расстояние поездки: <get bikedistance>!",
+          "setter": "<set user_bikedistance=300-1000>",
+          "change_text": "средняя длина-расстояние поездки: <get user_bikedistance>!",
           "question": "",
           "go_to": "change_winter",
           "keyboard": {
@@ -399,8 +399,8 @@
         {
           "comand": "зимой до минус 10 градусов",
           "comand_info": "до -10 градусов",
-          "setter": "<set bikewinter=зимой до минус 10 градусов>",
-          "change_text": "<get bikewinter>!",
+          "setter": "<set user_bikewinter=зимой до минус 10 градусов>",
+          "change_text": "<get user_bikewinter>!",
           "question": "",
           "go_to": "change_rain",
           "keyboard": {
@@ -411,8 +411,8 @@
         {
           "comand": "зимой до минус 15 градусов",
           "comand_info": "до -15 градусов",
-          "setter": "<set bikewinter=зимой до минус 15 градусов>",
-          "change_text": "<get bikewinter>!",
+          "setter": "<set user_bikewinter=зимой до минус 15 градусов>",
+          "change_text": "<get user_bikewinter>!",
           "question": "",
           "go_to": "change_rain",
           "keyboard": {
@@ -423,8 +423,8 @@
         {
           "comand": "зимой до минус 25 градусов",
           "comand_info": "до -25 градусов",
-          "setter": "<set bikewinter=зимой до минус 25 градусов>",
-          "change_text": "<get bikewinter>!",
+          "setter": "<set user_bikewinter=зимой до минус 25 градусов>",
+          "change_text": "<get user_bikewinter>!",
           "question": "",
           "go_to": "change_rain",
           "keyboard": {
@@ -435,8 +435,8 @@
         {
           "comand": "только летом",
           "comand_info": "катаюсь только летом",
-          "setter": "<set bikewinter=только летом>",
-          "change_text": "<get bikewinter>!",
+          "setter": "<set user_bikewinter=только летом>",
+          "change_text": "<get user_bikewinter>!",
           "question": "",
           "go_to": "change_rain",
           "keyboard": {
@@ -447,8 +447,8 @@
         {
           "comand": "только весной летом и осенью",
           "comand_info": "катаюсь только весной, летом и осенью",
-          "setter": "<set bikewinter=только весной летом и осенью>",
-          "change_text": "<get bikewinter>!",
+          "setter": "<set user_bikewinter=только весной летом и осенью>",
+          "change_text": "<get user_bikewinter>!",
           "question": "",
           "go_to": "change_rain",
           "keyboard": {
@@ -478,8 +478,8 @@
         {
           "comand": "после дождя",
           "comand_info": "после дождя",
-          "setter": "<set bike_rain=после дождя>",
-          "change_text": " люблю кататься: <get bike_rain>!",
+          "setter": "<set user_bike_rain=после дождя>",
+          "change_text": " люблю кататься: <get user_bike_rain>!",
           "question": "",
           "go_to": "change_volunteer",
           "keyboard": {
@@ -490,8 +490,8 @@
         {
           "comand": "под летним дождем",
           "comand_info": "под летним дождем",
-          "setter": "<set bike_rain=под летним дождем>",
-          "change_text": " люблю кататься: <get bike_rain>!",
+          "setter": "<set user_bike_rain=под летним дождем>",
+          "change_text": " люблю кататься: <get user_bike_rain>!",
           "question": "",
           "go_to": "change_volunteer",
           "keyboard": {
@@ -502,8 +502,8 @@
         {
           "comand": "под дождем",
           "comand_info": "под дождем",
-          "setter": "<set bike_rain=под дождем>",
-          "change_text": " люблю кататься: <get bike_rain>!",
+          "setter": "<set user_bike_rain=под дождем>",
+          "change_text": " люблю кататься: <get user_bike_rain>!",
           "question": "",
           "go_to": "change_volunteer",
           "keyboard": {
@@ -514,8 +514,8 @@
         {
           "comand": "только в хорошую погоду",
           "comand_info": "только в хорошую погоду!",
-          "setter": "<set bike_rain=только в хорошую погоду>",
-          "change_text": " люблю кататься: <get bike_rain>!",
+          "setter": "<set user_bike_rain=только в хорошую погоду>",
+          "change_text": " люблю кататься: <get user_bike_rain>!",
           "question": "",
           "go_to": "change_volunteer",
           "keyboard": {
@@ -545,8 +545,8 @@
         {
           "comand": "в организации мероприятий",
           "comand_info": "Помощь в организации городских акций и мероприятий (велопробеги, квесты, гонки, форумы и другие)",
-          "setter": "<set bike_volunteer=Организация мероприятий>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Организация мероприятий>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -557,8 +557,8 @@
         {
           "comand": "Онлайн активизм",
           "comand_info": "Онлайн активизм (распространение информации и активность в социальных сетях, приглашение новых участников, составление отчетов, редактор сообществ, администратор бесед)",
-          "setter": "<set bike_volunteer=Онлайн активизм>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Онлайн активизм>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -569,8 +569,8 @@
         {
           "comand": "Распространение листовок",
           "comand_info": "Распространение листовок, печатных материалов",
-          "setter": "<set bike_volunteer=Распространение листовок>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Распространение листовок>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -581,8 +581,8 @@
         {
           "comand": "Фотограф",
           "comand_info": "Фотограф (профессиональная фотосъемка)",
-          "setter": "<set bike_volunteer=Фотограф>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Фотограф>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -593,8 +593,8 @@
         {
           "comand": "Видеооператор",
           "comand_info": "Видеооператор (профессиональная видеосъемка, видеограф)",
-          "setter": "<set bike_volunteer=Видеооператор>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Видеооператор>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -605,8 +605,8 @@
         {
           "comand": "Монтаж видео",
           "comand_info": "Монтаж видео",
-          "setter": "<set bike_volunteer=Монтаж видео>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Монтаж видео>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -617,8 +617,8 @@
         {
           "comand": "Графический дизайн",
           "comand_info": "Графический дизайн",
-          "setter": "<set bike_volunteer=Графический дизайн>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Графический дизайн>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -629,8 +629,8 @@
         {
           "comand": "Вебдизайн",
           "comand_info": "Вебдизайн",
-          "setter": "<set bike_volunteer=Вебдизайн>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Вебдизайн>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -641,8 +641,8 @@
         {
           "comand": "Проектирование",
           "comand_info": "Специалист в проектировании",
-          "setter": "<set bike_volunteer=Проектирование>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Проектирование>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -653,8 +653,8 @@
         {
           "comand": "Архитектура и градостроительство",
           "comand_info": "Специалист в архитектуре и градостроительстве",
-          "setter": "<set bike_volunteer=Архитектура и градостроительство>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Архитектура и градостроительство>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -665,8 +665,8 @@
         {
           "comand": "Музыкант",
           "comand_info": "Музыкант",
-          "setter": "<set bike_volunteer=Музыкант>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Музыкант>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -677,8 +677,8 @@
         {
           "comand": "Ведущий на мероприятие",
           "comand_info": "Ведущий на мероприятие",
-          "setter": "<set bike_volunteer=Ведущий на мероприятие>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Ведущий на мероприятие>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -689,8 +689,8 @@
         {
           "comand": "SMM",
           "comand_info": "SMM (Журналистика, оформление сообществ, наполнение сайта)",
-          "setter": "<set bike_volunteer=SMM>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=SMM>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -701,8 +701,8 @@
         {
           "comand": "Программист",
           "comand_info": "Программист (Фронтенд, Бэкенд, работа над приложением, сайтом)",
-          "setter": "<set bike_volunteer=Программист>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Программист>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -713,8 +713,8 @@
         {
           "comand": "Спонсор",
           "comand_info": "Спонсор (регулярная или разовая поддержка мероприятия, сообщества)",
-          "setter": "<set bike_volunteer=Спонсор>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Спонсор>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -725,8 +725,8 @@
         {
           "comand": "Распечатка промо-материалов",
           "comand_info": "Помощь с распечаткой промо-материалов",
-          "setter": "<set bike_volunteer=Распечатка промо>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Распечатка промо>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -737,8 +737,8 @@
         {
           "comand": "Поиск финансирования",
           "comand_info": "Помощь в поиске финансирования (фандрайзер -специалист по привлечению денежных средств)",
-          "setter": "<set bike_volunteer=Поиск финансирования>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Поиск финансирования>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -749,8 +749,8 @@
         {
           "comand": "Физическая помощь",
           "comand_info": "Физическая помощь (переноска тяжестей и пр.)",
-          "setter": "<set bike_volunteer=Физическая помощь>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Физическая помощь>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -761,8 +761,8 @@
         {
           "comand": "Водитель",
           "comand_info": "Водитель (со своей машиной)",
-          "setter": "<set bike_volunteer=Водитель>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=Водитель>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -773,8 +773,8 @@
         {
           "comand": "Не знаю",
           "comand_info": "Пока не знаю, присматриваюсь",
-          "setter": "<set bike_volunteer=не знаю>",
-          "change_text": " интересно заниматься: <get bike_volunteer>!",
+          "setter": "<set user_bike_volunteer=не знаю>",
+          "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
           "go_to": "change_verno",
           "keyboard": {
@@ -792,7 +792,7 @@
         {
           "comand": "подсказка",
           "setter": "",
-          "hint": "Проверьте пожалуйста, правильность введенных данных:\\n\\n « Район: <get region>. Предпочитаю стиль катания: <get bikestyle> Cредняя длина-расстояние поездки:<get bikedistance> км. Люблю кататься <get bike_rain> и <get bikewinter>! Мой велосипед: <get bikemodel>.\\n☎ Контакт для связи: <get user_mobile>.\\n <get firstName>. »\\n \\n Данные верны?\\n 1⃣ - Да\\n 2⃣ - Нет, изменить\\n",
+          "hint": "Проверьте пожалуйста, правильность введенных данных:\\n\\n « Район: <get region>. Предпочитаю стиль катания: <get user_bikestyle> Cредняя длина-расстояние поездки:<get user_bikedistance> км. Люблю кататься <get user_bike_rain> и <get user_bikewinter>! Мой велосипед: <get user_bikemodel>.\\nМогу помочь в велодвижении в качестве <get user_bike_volunteer>\\n☎ Контакт для связи: <get user_mobile>.\\n <get firstName>. »\\n \\n Данные верны?\\n 1⃣ - Да\\n 2⃣ - Нет, изменить\\n",
           "change_text": "",
           "question": ""
         },
