@@ -369,7 +369,8 @@ module.exports = class fireBase extends Global {
       post: this.post_link,
       photo: this.photo_link,
       album: this.album_link,
-      board: this.board_link
+      board: this.board_link,
+      referal: this.change_referal_link
     };
   }
   set post_link(post_id) {

@@ -214,13 +214,13 @@ module.exports = (rive, public_type) => {
         .then(link => console.log("create_change_route_link успешно"))
         .catch(err => console.log(err));
     });
-    rive.setSubroutine("create_change_referal_link", function(rive, args) {
+    rive.setSubroutine("create_generate_referal_links", function(rive, args) {
       console.log(
         ".setSubroutine(create_change_referal_link>>>>>>>>>>" +
           JSON.stringify(rive.currentUser())
       );
-
-      G.change_referal_link = G.template_referal_link;
+      // генерация 2 ссылок, и показываем в боте, другая для сайта.
+      G.generate_referal_links();
     });
 
     var checkDate = function(body, callback) {

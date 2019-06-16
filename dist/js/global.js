@@ -78,17 +78,43 @@ module.exports = class Global {
       .catch(err => console.log(err));
   }
   // teplate referal link
-  get template_referal_link() {
-    return `https://vk.me/public${this._group_id}?ref=${this._social}_${this._chatId}&ref_source=bot`;
+  template_referal_link(ref_source) {
+    return `https://vk.me/public${this._group_id}?ref=${this._social}_${
+      this._chatId
+    }&ref_source=${ref_source}`;
   }
   // link generate referal
-  get change_referal_link() {
-    return this.rive.getUservar(this.chatId, "change_referal_link");
+  get change_referal_link_bot() {
+    return this.rive.getUservar(this.chatId, "change_referal_link_bot");
   }
-  set change_referal_link(link) {
-    this.getShortLink(link)
+  get change_referal_link_site() {
+    return this.rive.getUservar(this.chatId, "change_referal_link_site");
+  }
+  get change_referal_link_app() {
+    return this.rive.getUservar(this.chatId, "change_referal_link_app");
+  }
+  get change_referal_link_flyer() {
+    return this.rive.getUservar(this.chatId, "change_referal_link_flyer");
+  }
+  generate_referal_links() {
+    this.getShortLink(this.template_referal_link("bot"))
       .then(link => {
-        this.rive.setUservar(this.chatId, "change_referal_link", link);
+        this.rive.setUservar(this.chatId, "change_referal_link_bot", link);
+      })
+      .catch(err => console.log(err));
+    this.getShortLink(this.template_referal_link("site"))
+      .then(link => {
+        this.rive.setUservar(this.chatId, "change_referal_link_site", link);
+      })
+      .catch(err => console.log(err));
+    this.getShortLink(this.template_referal_link("app"))
+      .then(link => {
+        this.rive.setUservar(this.chatId, "change_referal_link_app", link);
+      })
+      .catch(err => console.log(err));
+    this.getShortLink(this.template_referal_link("flyer"))
+      .then(link => {
+        this.rive.setUservar(this.chatId, "change_referal_link_flyer", link);
       })
       .catch(err => console.log(err));
   }
