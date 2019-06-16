@@ -315,6 +315,11 @@ module.exports = class fireBase extends Global {
       },
       likes: super.likes,
       link: this.link,
+      referal_links: {
+        bot: this.change_referal_link_bot,
+        site: this.change_referal_link_site,
+        app: this.change_referal_link_app,
+        flyer: this.change_referal_link_flyer },
       referal: super.referal
     };
   }
@@ -369,8 +374,7 @@ module.exports = class fireBase extends Global {
       post: this.post_link,
       photo: this.photo_link,
       album: this.album_link,
-      board: this.board_link,
-      referal: this.change_referal_link
+      board: this.board_link
     };
   }
   set post_link(post_id) {
