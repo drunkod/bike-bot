@@ -214,6 +214,14 @@ module.exports = (rive, public_type) => {
         .then(link => console.log("create_change_route_link успешно"))
         .catch(err => console.log(err));
     });
+    rive.setSubroutine("create_change_referal_link", function(rive, args) {
+      console.log(
+        ".setSubroutine(create_change_referal_link>>>>>>>>>>" +
+          JSON.stringify(rive.currentUser())
+      );
+
+      G.change_referal_link = G.template_referal_link;
+    });
 
     var checkDate = function(body, callback) {
       console.log("217>>>>>>>>>>" + JSON.stringify(rive.currentUser()));
@@ -822,7 +830,7 @@ module.exports = (rive, public_type) => {
               })
               .catch(error => {
                 console.log(error);
-                
+
                 // send_reply(context, null, error);
               });
           }
@@ -834,9 +842,10 @@ module.exports = (rive, public_type) => {
 
             fc.post_link = res.response.post_id;
             fc.saveUserData()
-              .then(res => 
-                { saveReferal();
-                  resolve(`✔️`);})
+              .then(res => {
+                saveReferal();
+                resolve(`✔️`);
+              })
               .catch(err => reject(err));
           })
           .catch(err => {

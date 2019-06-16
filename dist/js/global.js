@@ -77,6 +77,21 @@ module.exports = class Global {
       })
       .catch(err => console.log(err));
   }
+  // teplate referal link
+  get template_referal_link() {
+    return `https://vk.me/public${this._group_id}?ref=${this._social}_${this._chatId}&ref_source=bot`;
+  }
+  // link generate referal
+  get change_referal_link() {
+    return this.rive.getUservar(this.chatId, "change_referal_link");
+  }
+  set change_referal_link(link) {
+    this.getShortLink(link)
+      .then(link => {
+        this.rive.setUservar(this.chatId, "change_referal_link", link);
+      })
+      .catch(err => console.log(err));
+  }
 
   get social() {
     return this._social;
