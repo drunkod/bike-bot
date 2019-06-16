@@ -316,10 +316,11 @@ module.exports = class fireBase extends Global {
       likes: super.likes,
       link: this.link,
       referal_links: {
-        bot: this.change_referal_link_bot,
-        site: this.change_referal_link_site,
-        app: this.change_referal_link_app,
-        flyer: this.change_referal_link_flyer },
+        bot: super.change_referal_link_bot,
+        site: super.change_referal_link_site,
+        app: super.change_referal_link_app,
+        flyer: super.change_referal_link_flyer
+      },
       referal: super.referal
     };
   }
