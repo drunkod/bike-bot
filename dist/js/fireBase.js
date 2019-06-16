@@ -1,5 +1,6 @@
 const {
   db,
+  FieldValue,
   auth,
   currentUser,
   nowCollection,
@@ -116,7 +117,7 @@ module.exports = class fireBase extends Global {
 
     console.log(count);
 
-    const increment = firebaseadmin.firestore.FieldValue.increment(count);
+    const increment = FieldValue.increment(count);
     return increment;
   }
   async addVkLink() {
@@ -146,6 +147,7 @@ module.exports = class fireBase extends Global {
       .doc(super.social + "|" + super.chatId + "|" + super.type + "|" + post_id)
       .set(this.data_likes(post_id));
   }
+
   static async setRating({ social, social_id, data_model, merge }) {
     console.log("setRating");
 

@@ -10,6 +10,7 @@ console.log("init firebaseadmin");
 const db = firebaseadmin.firestore();
 const auth = firebaseadmin.auth();
 const currentUser = auth.currentUser;
+const { FieldValue } = firebaseadmin.firestore;
 
 // date issue fix according to firebase
 // const settings = {
@@ -32,6 +33,7 @@ const routesCollection = db.collection("routes");
 
 module.exports = {
   db,
+  FieldValue,
   auth,
   currentUser,
   nowCollection,

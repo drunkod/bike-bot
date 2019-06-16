@@ -7,6 +7,8 @@ const Markup = require("node-vk-bot-api/lib/markup");
 const keyboard = require("./keyboard");
 // todo вынести реферал в класс отдельно
 // const referal = require("./referal");
+const save_editor_rating = require("./save_editor_rating");
+const update_widget_vk = require("./update_widget_vk");
 const Global = require("./global");
 const fireBase = require("./fireBase");
 const oneSignal = require("./oneSignal");
@@ -802,6 +804,29 @@ module.exports = (rive, public_type) => {
           rive.getUservar(chatId, "user_bike_rain"),
           rive.getUservar(chatId, "user_bikemodel")
         ];
+        function saveReferal() {
+          if (G.referal) {
+            // сохранение рейтинга редактора
+            save_editor_rating
+              .saveRating("vk", G.referal.id, "invites")
+              .then(function(res) {
+                // send_reply(context, res);
+
+                //обновление виджета
+                update_widget_vk.get_rating(
+                  save_editor_rating.public_type(),
+                  "editor",
+                  save_editor_rating.year_title(),
+                  save_editor_rating.month_title()
+                );
+              })
+              .catch(error => {
+                console.log(error);
+                
+                // send_reply(context, null, error);
+              });
+          }
+        }
 
         vk.newUser()
           .then(res => {
@@ -809,12 +834,17 @@ module.exports = (rive, public_type) => {
 
             fc.post_link = res.response.post_id;
             fc.saveUserData()
-              .then(res => resolve(`✔️`))
+              .then(res => 
+                { saveReferal();
+                  resolve(`✔️`);})
               .catch(err => reject(err));
           })
           .catch(err => {
             fc.saveUserData()
-              .then(res => resolve(`✔️`))
+              .then(res => {
+                saveReferal();
+                resolve(`✔️`);
+              })
               .catch(err => reject(err));
             reject(err);
           });
