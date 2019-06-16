@@ -806,7 +806,7 @@
           "comand": "отправить",
           "setter": "<set TYPE=CONTACT>",
           "change_text": "Отправить...",
-          "question": "<call>save_data_new_user</call> Спасибо за ввод данных!",
+          "question": "<call>save_data_new_user</call> Спасибо за ввод данных!\\n Прямо сейчас, вы можете пригласить друга в наше сообщество, поделившись данной ссылкой: <get change_referal_link_bot>. За каждого приглашенного вы получите бонусы)",
           "go_to": "menu",
           "keyboard": {
             "line": 1,
