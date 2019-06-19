@@ -205,9 +205,17 @@ module.exports = class fireBase extends Global {
       console.log(
         super.social + "|" + super.social_id + JSON.stringify(this.data_user)
       );
+      let merge;
+      // если нажали напомнить позже вв. маршрут на сайте
+      if (super.user_route === "remind_later") {
+        merge = false;
+        this.data_user.hashtags.bike.user_route === super.user_route;
+      } else {
+        merge = true;
+      }
       const res = await usersCollection
         .doc(super.social + "|" + super.social_id)
-        .set(this.data_user);
+        .set(this.data_user, { merge });
       console.log("Document successfully written!");
     } catch (error) {
       console.error("Error writing document: ", error);

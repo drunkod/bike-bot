@@ -67,6 +67,10 @@ module.exports = class Global {
     }
   }
   // link generate route
+  get user_route() {
+    return this.rive.getUservar(this.chatId, "user_route");
+  }
+  // link generate route
   get change_route_link() {
     return this.rive.getUservar(this.chatId, "change_route_link");
   }
