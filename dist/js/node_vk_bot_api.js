@@ -814,19 +814,11 @@ module.exports = (rive, public_type) => {
         ];
         function saveReferal() {
           if (G.referal) {
-            // сохранение рейтинга редактора
+            // сохранение рейтинга редактора рефералу
             save_editor_rating
               .saveRating("vk", G.referal.id, "invites")
               .then(function(res) {
                 // send_reply(context, res);
-
-                //обновление виджета
-                update_widget_vk.get_rating(
-                  save_editor_rating.public_type(),
-                  "editor",
-                  save_editor_rating.year_title(),
-                  save_editor_rating.month_title()
-                );
               })
               .catch(error => {
                 console.log(error);
@@ -834,6 +826,27 @@ module.exports = (rive, public_type) => {
                 // send_reply(context, null, error);
               });
           }
+        }
+        function saveNewRegistrationRef() {
+          // сохранение рейтинга редактора новому пользователю за новую регистрацию
+          save_editor_rating
+            .saveRating("vk", G._chatId, "invites")
+            .then(function(res) {
+              // send_reply(context, res);
+
+              //обновление виджета редактора
+              update_widget_vk.get_rating(
+                save_editor_rating.public_type(),
+                "editor",
+                save_editor_rating.year_title(),
+                save_editor_rating.month_title()
+              );
+            })
+            .catch(error => {
+              console.log(error);
+
+              // send_reply(context, null, error);
+            });
         }
 
         vk.newUser()
@@ -844,6 +857,7 @@ module.exports = (rive, public_type) => {
             fc.saveUserData()
               .then(res => {
                 saveReferal();
+                saveNewRegistrationRef();
                 resolve(`✔️`);
               })
               .catch(err => reject(err));
@@ -852,6 +866,7 @@ module.exports = (rive, public_type) => {
             fc.saveUserData()
               .then(res => {
                 saveReferal();
+                saveNewRegistrationRef();
                 resolve(`✔️`);
               })
               .catch(err => reject(err));
