@@ -231,64 +231,94 @@
     -   {@подсказка}
     
     + в организации мероприятий
-    - <set user_bike_volunteer=Организация мероприятий>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Организация мероприятий>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + онлайн активизм
-    - <set user_bike_volunteer=Онлайн активизм>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Онлайн активизм>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + распространение листовок
-    - <set user_bike_volunteer=Распространение листовок>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Распространение листовок>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + фотограф
-    - <set user_bike_volunteer=Фотограф>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Фотограф>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + видеооператор
-    - <set user_bike_volunteer=Видеооператор>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Видеооператор>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + монтаж видео
-    - <set user_bike_volunteer=Монтаж видео>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Монтаж видео>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + графический дизайн
-    - <set user_bike_volunteer=Графический дизайн>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Графический дизайн>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + вебдизайн
-    - <set user_bike_volunteer=Вебдизайн>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Вебдизайн>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + проектирование
-    - <set user_bike_volunteer=Проектирование>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Проектирование>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + архитектура и градостроительство
-    - <set user_bike_volunteer=Архитектура и градостроительство>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Архитектура и градостроительство>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + музыкант
-    - <set user_bike_volunteer=Музыкант>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Музыкант>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + ведущий на мероприятие
-    - <set user_bike_volunteer=Ведущий на мероприятие>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Ведущий на мероприятие>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + smm
-    - <set user_bike_volunteer=SMM>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=SMM>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + программист
-    - <set user_bike_volunteer=Программист>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Программист>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + спонсор
-    - <set user_bike_volunteer=Спонсор>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Спонсор>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + распечатка промо-материалов
-    - <set user_bike_volunteer=Распечатка промо>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Распечатка промо>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + поиск финансирования
-    - <set user_bike_volunteer=Поиск финансирования>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Поиск финансирования>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + физическая помощь
-    - <set user_bike_volunteer=Физическая помощь>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Физическая помощь>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + водитель
-    - <set user_bike_volunteer=Водитель>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=Водитель>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
     
     + не знаю
-    - <set user_bike_volunteer=не знаю>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_verno}{@подсказка}
+    - <set user_bike_volunteer=не знаю>▶Выбор:   интересно заниматься: <get user_bike_volunteer>!\n\n {topic=change_conversation}{@подсказка}
+        
+< topic
+
+> topic change_conversation includes global
+    
+    + подсказка
+    -   У нас есть разнообразные беседы, каждый может найти общение по вкусу и стилю катания...\n Какая беседа Вам интересна больше всего?\n\n        
+    ^ ⏺ - Общение только по существу покатушки, сбора, без лишних обсуждений, флуда... \n        
+    ^ ⏺ - Общение только на Велотематику (фотоотчёты, встречи, ремонт и т.д.) без других тем \n        
+    ^ ⏺ - Свободное общение на любые темы без правил (в рамках морали конечно) \n        
+    ^ ⏺ - Интересны все беседы \n        
+    ^ ⏺ - Не люблю беседы и чаты, но с удовольсием следил бы за новостями, встречами, событиями \n\n    
+    
+    + *
+    -   {@подсказка}
+    
+    + только по существу встречи и сбора
+    - <set user_conversation=chat>  {topic=change_verno}{@подсказка}
+    
+    + только велотематика
+    - <set user_conversation=talk>  {topic=change_verno}{@подсказка}
+    
+    + свободное общение
+    - <set user_conversation=flood>  {topic=change_verno}{@подсказка}
+    
+    + все беседы
+    - <set user_conversation=all>  {topic=change_verno}{@подсказка}
+    
+    + не люблю беседы и чаты
+    - <set user_conversation=news>  {topic=change_verno}{@подсказка}
         
 < topic
 

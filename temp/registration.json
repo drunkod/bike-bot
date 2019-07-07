@@ -548,7 +548,7 @@
           "setter": "<set user_bike_volunteer=Организация мероприятий>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 1,
             "color": "primary"
@@ -560,7 +560,7 @@
           "setter": "<set user_bike_volunteer=Онлайн активизм>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 1,
             "color": "primary"
@@ -572,7 +572,7 @@
           "setter": "<set user_bike_volunteer=Распространение листовок>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 1,
             "color": "primary"
@@ -584,7 +584,7 @@
           "setter": "<set user_bike_volunteer=Фотограф>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 1,
             "color": "primary"
@@ -596,7 +596,7 @@
           "setter": "<set user_bike_volunteer=Видеооператор>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 2,
             "color": "primary"
@@ -608,7 +608,7 @@
           "setter": "<set user_bike_volunteer=Монтаж видео>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 2,
             "color": "primary"
@@ -620,7 +620,7 @@
           "setter": "<set user_bike_volunteer=Графический дизайн>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 2,
             "color": "primary"
@@ -632,7 +632,7 @@
           "setter": "<set user_bike_volunteer=Вебдизайн>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 2,
             "color": "primary"
@@ -644,7 +644,7 @@
           "setter": "<set user_bike_volunteer=Проектирование>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 3,
             "color": "primary"
@@ -656,7 +656,7 @@
           "setter": "<set user_bike_volunteer=Архитектура и градостроительство>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 3,
             "color": "primary"
@@ -668,7 +668,7 @@
           "setter": "<set user_bike_volunteer=Музыкант>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 3,
             "color": "primary"
@@ -680,7 +680,7 @@
           "setter": "<set user_bike_volunteer=Ведущий на мероприятие>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 3,
             "color": "primary"
@@ -692,7 +692,7 @@
           "setter": "<set user_bike_volunteer=SMM>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 4,
             "color": "primary"
@@ -704,7 +704,7 @@
           "setter": "<set user_bike_volunteer=Программист>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 4,
             "color": "primary"
@@ -716,7 +716,7 @@
           "setter": "<set user_bike_volunteer=Спонсор>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 4,
             "color": "primary"
@@ -728,7 +728,7 @@
           "setter": "<set user_bike_volunteer=Распечатка промо>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 4,
             "color": "primary"
@@ -740,7 +740,7 @@
           "setter": "<set user_bike_volunteer=Поиск финансирования>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 5,
             "color": "primary"
@@ -752,7 +752,7 @@
           "setter": "<set user_bike_volunteer=Физическая помощь>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 5,
             "color": "primary"
@@ -764,7 +764,7 @@
           "setter": "<set user_bike_volunteer=Водитель>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 5,
             "color": "primary"
@@ -776,7 +776,7 @@
           "setter": "<set user_bike_volunteer=не знаю>",
           "change_text": " интересно заниматься: <get user_bike_volunteer>!",
           "question": "",
-          "go_to": "change_verno",
+          "go_to": "change_conversation",
           "keyboard": {
             "line": 5,
             "color": "primary"
@@ -784,7 +784,85 @@
         }
       ]
     },
-
+    {
+      "name": "change_conversation",
+      "keyboard": "on",
+      "scenes": [
+        {
+          "comand": "подсказка",
+          "setter": "",
+          "hint": "У нас есть разнообразные беседы, каждый может найти общение по вкусу и стилю катания...\\n Какая беседа Вам интересна больше всего?",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "*",
+          "setter": "",
+          "change_text": "",
+          "question": ""
+        },
+        {
+          "comand": "Только по существу встречи и сбора",
+          "comand_info": "Общение только по существу покатушки, сбора, без лишних обсуждений, флуда...",
+          "setter": "<set user_conversation=chat>",
+          "change_text": "",
+          "question": "",
+          "go_to": "change_verno",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "Только Велотематика",
+          "comand_info": "Общение только на Велотематику (фотоотчёты, встречи, ремонт и т.д.) без других тем",
+          "setter": "<set user_conversation=talk>",
+          "change_text": "",
+          "question": "",
+          "go_to": "change_verno",
+          "keyboard": {
+            "line": 1,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "Свободное общение",
+          "comand_info": "Свободное общение на любые темы без правил (в рамках морали конечно)",
+          "setter": "<set user_conversation=flood>",
+          "change_text": "",
+          "question": "",
+          "go_to": "change_verno",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "Все беседы",
+          "comand_info": "Интересны все беседы",
+          "setter": "<set user_conversation=all>",
+          "change_text": "",
+          "question": "",
+          "go_to": "change_verno",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        },
+        {
+          "comand": "Не люблю беседы и чаты",
+          "comand_info": "Не люблю беседы и чаты, но с удовольсием следил бы за новостями, встречами, событиями",
+          "setter": "<set user_conversation=news>",
+          "change_text": "",
+          "question": "",
+          "go_to": "change_verno",
+          "keyboard": {
+            "line": 2,
+            "color": "primary"
+          }
+        }
+      ]
+    },
     {
       "name": "change_verno",
       "keyboard": "on",

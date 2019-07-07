@@ -670,6 +670,30 @@ Markup.button('Поиск финансирования', 'primary'),
        
    
   
+ case 'change_conversation':
+    return [
+
+    [
+Markup.button('Только по существу встречи и сбора', 'primary'),
+ Markup.button('Только Велотематика', 'primary'),
+ Markup.button('Свободное общение', 'primary'),
+ Markup.button('Все беседы', 'primary'),
+    ],
+ 
+    [
+Markup.button('Не люблю беседы и чаты', 'primary'),
+
+    ],
+ 
+   
+
+
+            [Markup.button('Меню', 'default'),Markup.button('Помощь', 'default'),],
+       
+     ];
+       
+   
+  
  case 'change_verno':
     return [
 
