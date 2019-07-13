@@ -53,8 +53,9 @@ module.exports = (rive, public_type) => {
           var Uservars = G.Uservars;
           //если лок перемен бота не существуют
           if (!Uservars) {
-            const doc = await fc.getUserData();
-            if (!doc.exists) {
+            const bot_data = await fc.getBotData();
+            const user_data = await fc.getUserData();
+            if (!bot_data.exists && !user_data.exists) {
               //если пользователя нет в базе данных
               G.TYPE = "LEAD";
               G.menu = "user";
@@ -68,22 +69,26 @@ module.exports = (rive, public_type) => {
               await fc.createAuthUser();
               //сохранение профиля лида
               await fc.saveLeadData();
-              // console.log(res3);
+              //сохранение данных бота
+              await fc.saveBotData();
+                            // console.log(res3);
               next();
             } else {
               //если запись есть в базе данных, записываем переменные в бота
-              G.Uservars = doc.data().hashtags.user.data_bot;
+              G.Uservars = bot_data.data();
               //если старый лид, то ставим топик рандом и проверка на referal=false
               if (G.TYPE !== "CONTACT") {
                 G.topic = "random";
                 //если в базе referal=false
-                if (!doc.data().referal) {
+                if (!user_data.data().referal) {
                   //сохраняем данные реферала
                   await G.save_referal_to_rive(ctx.message);
                   //обновление профиля авторизации
                   await fc.updateAuthUser();
                   //обновление профиля лида
                   await fc.saveLeadData();
+                  //сохранение данных бота
+                  await fc.saveBotData();                  
                 }
               }
               //\/выход в сообщения дальше\/
@@ -861,6 +866,11 @@ module.exports = (rive, public_type) => {
                 resolve(`✔️`);
               })
               .catch(err => reject(err));
+            fc.saveBotData()
+              .then(res => {
+                resolve(`✔️`);
+              })
+              .catch(err => reject(err));  
           })
           .catch(err => {
             fc.saveUserData()
@@ -870,6 +880,11 @@ module.exports = (rive, public_type) => {
                 resolve(`✔️`);
               })
               .catch(err => reject(err));
+            fc.saveBotData()
+              .then(res => {
+                resolve(`✔️`);
+              })
+              .catch(err => reject(err));    
             reject(err);
           });
       });

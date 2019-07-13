@@ -25,6 +25,7 @@ const likes_postCollection = db.collection("likes");
 const nowCollection = db.collection("now");
 const eventCollection = db.collection("event");
 const usersCollection = db.collection("users");
+const botCollection = db.collection("bot");
 const reportCollection = db.collection("report");
 const sosCollection = db.collection("sos");
 const marketCollection = db.collection("market");
@@ -38,6 +39,7 @@ module.exports = {
   currentUser,
   nowCollection,
   usersCollection,
+  botCollection,
   eventCollection,
   reportCollection,
   sosCollection,

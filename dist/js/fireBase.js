@@ -5,6 +5,7 @@ const {
   currentUser,
   nowCollection,
   usersCollection,
+  botCollection,
   eventCollection,
   reportCollection,
   sosCollection,
@@ -216,7 +217,7 @@ module.exports = class fireBase extends Global {
       const res = await usersCollection
         .doc(super.social + "|" + super.social_id)
         .set(this.data_user, { merge });
-      console.log("Document successfully written!");
+      console.log("Document successfully written!saveUserData");
     } catch (error) {
       console.error("Error writing document: ", error);
     }
@@ -229,12 +230,11 @@ module.exports = class fireBase extends Global {
       const res = await usersCollection
         .doc(super.social + "|" + super.social_id)
         .set(this.data_lead);
-      console.log("Document successfully written!");
+      console.log("Document successfully written!saveLeadData");
     } catch (error) {
       console.error("Error writing document: ", error);
     }
   }
-
   async getUserData() {
     const res = await usersCollection
       .doc(super.social + "|" + super.social_id)
@@ -242,6 +242,25 @@ module.exports = class fireBase extends Global {
     return res;
   }
 
+  async saveBotData() {
+    try {
+      console.log(
+        super.social + "|" + super.social_id + JSON.stringify(this.data_bot)
+      );
+      const res = await botCollection
+        .doc(super.social + "|" + super.social_id)
+        .set(this.data_bot);
+      console.log("Document successfully written!saveBotData");
+    } catch (error) {
+      console.error("Error writing document: ", error);
+    }
+  }
+  async getBotData() {
+    const res = await botCollection
+      .doc(super.social + "|" + super.social_id)
+      .get();
+    return res;
+  }
   data_likes(post_id) {
     return {
       tst: {
@@ -285,6 +304,9 @@ module.exports = class fireBase extends Global {
       link: this.link
     };
   }
+  get data_bot() {
+    return super.data_bot;
+  }
   get data_user() {
     return {
       type: super.type,
@@ -304,8 +326,7 @@ module.exports = class fireBase extends Global {
           city: "Челябинск",
           region: super.region,
           place: super.place,
-          mobile: super.mobile,
-          data_bot: super.data_bot
+          mobile: super.mobile
         },
         bike: {
           from_group_id: super.from_group_id,
@@ -348,8 +369,7 @@ module.exports = class fireBase extends Global {
           photo_url: super.photo_url,
           photo_64: super.photo_64,
           sex: super.sex,
-          city: "Челябинск",
-          data_bot: super.data_bot
+          city: "Челябинск"
         },
         bike: {
           from_group_id: super.from_group_id,
