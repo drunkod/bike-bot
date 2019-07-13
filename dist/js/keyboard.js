@@ -676,12 +676,14 @@ Markup.button('Поиск финансирования', 'primary'),
     [
 Markup.button('Только по существу встречи и сбора', 'primary'),
  Markup.button('Только Велотематика', 'primary'),
- Markup.button('Свободное общение', 'primary'),
- Markup.button('Все беседы', 'primary'),
     ],
  
     [
-Markup.button('Не люблю беседы и чаты', 'primary'),
+Markup.button('Свободное общение', 'primary'),
+
+ Markup.button('Все беседы', 'primary'),
+
+ Markup.button('Не люблю беседы и чаты', 'primary'),
 
     ],
  
