@@ -43,6 +43,7 @@ module.exports = class fireBase extends Global {
     // this.marketRef = db.collection("market");
     // this.routesRef = db.collection("routes");
   }
+
   // аунтификация профиля
   get email() {
     return `${super.social_id}@${super.social}.com`;
@@ -389,12 +390,12 @@ module.exports = class fireBase extends Global {
       photoURL: super.photo_url,
       disabled: false,
       customClaims: {
-        first_name: super.firstName,
+        first_name: super.translit(super.firstName),
         id: super.social_id,
-        last_name: super.lastName,
+        last_name: super.translit(super.lastName),
         social: super.social,
         sex: super.sex,
-        city: "Челябинск",
+        city: super.translit("Челябинск"),
         referal: super.referal
       }
     };
