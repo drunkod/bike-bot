@@ -317,7 +317,8 @@ module.exports = class fireBase extends Global {
           distance: super.bike_distance,
           winter: super.bike_winter,
           rain: super.bike_rain,
-          volunteer: super.bike_volunteer
+          volunteer: super.bike_volunteer,
+          conversation: super.conversation
           // speed: super.bike_temp
         }
       },

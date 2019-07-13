@@ -841,7 +841,9 @@ module.exports = class Global {
   get bike_volunteer() {
     return this.rive.getUservar(this.chatId, "user_bike_volunteer");
   }
-
+  get bike_conversation() {
+    return this.rive.getUservar(this.chatId, "user_conversation");
+  }
   get bike_temp() {
     return this.rive.getUservar(this.chatId, "biketemp");
   }
