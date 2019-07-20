@@ -14,7 +14,7 @@ module.exports = class Global {
     this.rive = contextRive;
     this.bot = bot;
   }
-  translit = (text, engToRus, replace) => {
+  translit(text, engToRus, replace) {
     var rus = "щшчцюяёжъыэабвгдезийклмнопрстуфхь".split(""),
       eng = "shh sh ch cz yu ya yo zh `` y' e` a b v g d e z i j k l m n o p r s t u f x `".split(
         " "
@@ -41,7 +41,7 @@ module.exports = class Global {
       }
     }
     return text;
-  };
+  }
   //to do валидация реферальных параметров
   //реферальные параметры vk.me/bike_overhear_chelyabinsk?ref=vk_12&ref_source=bot
   get ref_id() {
